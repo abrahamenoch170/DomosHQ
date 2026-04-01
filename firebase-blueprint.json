@@ -1,0 +1,66 @@
+{
+  "entities": {
+    "WaitlistEntry": {
+      "title": "WaitlistEntry",
+      "description": "A user on the waitlist",
+      "type": "object",
+      "properties": {
+        "role": { "type": "string", "enum": ["Tenant", "LandlordAgent", "Proptech"] },
+        "country": { "type": "string" },
+        "createdAt": { "type": "timestamp" },
+        "referralCode": { "type": "string" },
+        "referredBy": { "type": "string" },
+        "referralCount": { "type": "number" },
+        "points": { "type": "number" },
+        "fullName": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "state": { "type": "string" },
+        "city": { "type": "string" },
+        "propertiesCount": { "type": "number" },
+        "companyName": { "type": "string" },
+        "website": { "type": "string" },
+        "contactPerson": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "platformType": { "type": "string" },
+        "listingsCount": { "type": "number" },
+        "integrationInterest": { "type": "array" },
+        "position": { "type": "number" }
+      },
+      "required": ["role", "country", "createdAt", "referralCode"]
+    },
+    "Counter": {
+      "title": "Counter",
+      "description": "Global counters",
+      "type": "object",
+      "properties": {
+        "count": { "type": "number" }
+      },
+      "required": ["count"]
+    },
+    "WaitlistEmail": {
+      "title": "WaitlistEmail",
+      "description": "Lookup table to ensure email uniqueness",
+      "type": "object",
+      "properties": {
+        "referralCode": { "type": "string" }
+      },
+      "required": ["referralCode"]
+    }
+  },
+  "firestore": {
+    "/waitlist/{referralCode}": {
+      "schema": "WaitlistEntry",
+      "description": "Waitlist entries keyed by referral code"
+    },
+    "/counters/{counterId}": {
+      "schema": "Counter",
+      "description": "Global counters"
+    },
+    "/waitlist_emails/{email}": {
+      "schema": "WaitlistEmail",
+      "description": "Email uniqueness registry"
+    }
+  }
+}

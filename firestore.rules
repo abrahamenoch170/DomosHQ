@@ -1,0 +1,49 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Helper functions
+    function isValidWaitlistEntry() {
+      let data = request.resource.data;
+      return data.keys().hasAll(['role', 'country', 'createdAt', 'referralCode']) &&
+             data.role in ['Tenant', 'LandlordAgent', 'Proptech'] &&
+             data.referralCode is string &&
+             data.referralCode.size() > 0 &&
+             data.country is string &&
+             data.country.size() > 0;
+    }
+
+    match /waitlist/{referralCode} {
+      // Allow get so transactions can read referrer
+      allow get: if true;
+      // No list (no public read of the whole collection)
+      allow list: if false;
+      // Allow create if valid
+      allow create: if isValidWaitlistEntry();
+      // Allow update only for incrementing referralCount and points
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['referralCount', 'points']) &&
+                    request.resource.data.referralCount == resource.data.referralCount + 1 &&
+                    request.resource.data.points == resource.data.points + 1;
+    }
+
+    match /counters/{counterId} {
+      // Allow read so anyone can see the total count
+      allow read: if true;
+      // Allow create to initialize the counter
+      allow create: if request.resource.data.keys().hasOnly(['count']) && request.resource.data.count is number;
+      // Allow update to increment the counter
+      allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['count']) &&
+                    request.resource.data.count == resource.data.count + 1;
+    }
+
+    match /waitlist_emails/{email} {
+      // Allow get so transactions can check for existence
+      allow get: if true;
+      // No list
+      allow list: if false;
+      // Allow create to reserve the email
+      allow create: if request.resource.data.keys().hasOnly(['referralCode']) && request.resource.data.referralCode is string;
+      // No updates or deletes allowed
+      allow update, delete: if false;
+    }
+  }
+}

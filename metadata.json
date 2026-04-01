@@ -1,0 +1,5 @@
+{
+  "name": "Domos",
+  "description": "MyDomos is Africa’s rental trust infrastructure. We provide a single platform where tenants can verify utility debts, lock rental terms, pay monthly (via embedded financing), and keep verifiable records while landlords get guaranteed payments, automated receipts, and a shared dashboard. We also offer an API for listing sites and proptechs to embed trust tools and earn commissions. MyDomos makes renting safe, transparent, and predictable for everyone.",
+  "requestFramePermissions": []
+}
