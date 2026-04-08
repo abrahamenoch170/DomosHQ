@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { User, Building, Network, ArrowRight, ArrowLeft, CheckCircle2, Copy } from 'lucide-react';
-import { doc, runTransaction, serverTimestamp } from 'firebase/firestore';
+import { doc, runTransaction, serverTimestamp, onSnapshot, getDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import confetti from 'canvas-confetti';
 import { DomosIllustration } from './DomosIllustration';
@@ -56,7 +56,7 @@ export const WaitlistSection = () => {
   const [role, setRole] = useState<'Tenant' | 'LandlordAgent' | 'Proptech' | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [successData, setSuccessData] = useState<{ position?: number; code?: string; isExisting?: boolean } | null>(null);
+  const [successData, setSuccessData] = useState<{ position?: number; code?: string; isExisting?: boolean; referralCount?: number; points?: number; role?: string } | null>(null);
 
   // Form Data
   const [formData, setFormData] = useState({
@@ -84,12 +84,46 @@ export const WaitlistSection = () => {
     referredBy: ''
   });
 
-  // Check URL for referral code on mount
+  // Check URL for referral code on mount and check local storage for existing session
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const ref = params.get('ref');
     if (ref) {
       setFormData(prev => ({ ...prev, referredBy: ref }));
+    }
+
+    // Check for existing session
+    const savedCode = localStorage.getItem('domos_waitlist_code');
+    if (savedCode) {
+      setIsLoading(true);
+      const waitlistRef = doc(db, 'waitlist', savedCode);
+      
+      // Use onSnapshot to get real-time updates for referrals and points
+      const unsubscribe = onSnapshot(waitlistRef, (docSnap) => {
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setSuccessData({
+            position: data.position,
+            code: savedCode,
+            isExisting: true,
+            referralCount: data.referralCount || 0,
+            points: data.points || 0,
+            role: data.role
+          });
+          setRole(data.role);
+          setStep(4);
+          setIsLoading(false);
+        } else {
+          // If document doesn't exist anymore, clear local storage
+          localStorage.removeItem('domos_waitlist_code');
+          setIsLoading(false);
+        }
+      }, (error) => {
+        console.error("Error fetching waitlist data:", error);
+        setIsLoading(false);
+      });
+
+      return () => unsubscribe();
     }
   }, []);
 
@@ -199,10 +233,14 @@ export const WaitlistSection = () => {
           const existingWaitlistRef = doc(db, 'waitlist', existingCode);
           const existingWaitlistDoc = await transaction.get(existingWaitlistRef);
           if (existingWaitlistDoc.exists()) {
+            const data = existingWaitlistDoc.data();
             return { 
-              position: existingWaitlistDoc.data().position, 
+              position: data.position, 
               code: existingCode, 
-              isExisting: true 
+              isExisting: true,
+              referralCount: data.referralCount || 0,
+              points: data.points || 0,
+              role: data.role
             };
           }
           throw new Error("This email is already on the waitlist.");
@@ -286,10 +324,11 @@ export const WaitlistSection = () => {
           });
         }
 
-        return { position, code, isExisting: false };
+        return { position, code, isExisting: false, referralCount: 0, points: 0, role };
       });
 
       // Success
+      localStorage.setItem('domos_waitlist_code', result.code);
       confetti({
         particleCount: 100,
         spread: 70,
@@ -297,7 +336,14 @@ export const WaitlistSection = () => {
         colors: ['#2563EB', '#1E3A8A', '#F59E0B', '#10B981']
       });
       
-      setSuccessData({ position: result.position, code: result.code, isExisting: result.isExisting });
+      setSuccessData({ 
+        position: result.position, 
+        code: result.code, 
+        isExisting: result.isExisting,
+        referralCount: result.referralCount,
+        points: result.points,
+        role: result.role
+      });
       setStep(4);
     } catch (err: any) {
       if (err.message && err.message.includes("Missing or insufficient permissions")) {
@@ -665,12 +711,12 @@ export const WaitlistSection = () => {
                       
                       <div className="flex justify-between mt-6 pt-6 border-t border-gray-200">
                         <div className="text-center flex-1">
-                          <p className="text-2xl font-bold text-[#1F2937]">0</p>
+                          <p className="text-2xl font-bold text-[#1F2937]">{successData?.referralCount || 0}</p>
                           <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">Referrals</p>
                         </div>
                         <div className="w-px bg-gray-200"></div>
                         <div className="text-center flex-1">
-                          <p className="text-2xl font-bold text-amber-500">0</p>
+                          <p className="text-2xl font-bold text-amber-500">{successData?.points || 0}</p>
                           <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">Points</p>
                         </div>
                       </div>
