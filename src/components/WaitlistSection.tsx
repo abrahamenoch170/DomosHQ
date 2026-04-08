@@ -56,7 +56,7 @@ export const WaitlistSection = () => {
   const [role, setRole] = useState<'Tenant' | 'LandlordAgent' | 'Proptech' | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [successData, setSuccessData] = useState<{ position?: number; code?: string } | null>(null);
+  const [successData, setSuccessData] = useState<{ position?: number; code?: string; isExisting?: boolean } | null>(null);
 
   // Form Data
   const [formData, setFormData] = useState({
@@ -195,6 +195,16 @@ export const WaitlistSection = () => {
         // 0. Check email uniqueness
         const emailDoc = await transaction.get(emailRef);
         if (emailDoc.exists()) {
+          const existingCode = emailDoc.data().referralCode;
+          const existingWaitlistRef = doc(db, 'waitlist', existingCode);
+          const existingWaitlistDoc = await transaction.get(existingWaitlistRef);
+          if (existingWaitlistDoc.exists()) {
+            return { 
+              position: existingWaitlistDoc.data().position, 
+              code: existingCode, 
+              isExisting: true 
+            };
+          }
           throw new Error("This email is already on the waitlist.");
         }
 
@@ -276,7 +286,7 @@ export const WaitlistSection = () => {
           });
         }
 
-        return { position, code };
+        return { position, code, isExisting: false };
       });
 
       // Success
@@ -287,7 +297,7 @@ export const WaitlistSection = () => {
         colors: ['#2563EB', '#1E3A8A', '#F59E0B', '#10B981']
       });
       
-      setSuccessData({ position: result.position, code: result.code });
+      setSuccessData({ position: result.position, code: result.code, isExisting: result.isExisting });
       setStep(4);
     } catch (err: any) {
       if (err.message && err.message.includes("Missing or insufficient permissions")) {
@@ -308,7 +318,7 @@ export const WaitlistSection = () => {
 
   const copyToClipboard = () => {
     if (successData?.code) {
-      navigator.clipboard.writeText(`https://mydomos.com?ref=${successData.code}`);
+      navigator.clipboard.writeText(`https://mydomos.org?ref=${successData.code}`);
       alert('Referral link copied to clipboard!');
     }
   };
@@ -619,14 +629,18 @@ export const WaitlistSection = () => {
                 
                 {role === 'Proptech' ? (
                   <>
-                    <h3 className="text-2xl font-bold text-[#1F2937] mb-4">You're on the partner waitlist!</h3>
+                    <h3 className="text-2xl font-bold text-[#1F2937] mb-4">
+                      {successData?.isExisting ? "You're already on the partner waitlist!" : "You're on the partner waitlist!"}
+                    </h3>
                     <p className="text-gray-600 max-w-md">
                       Thank you for your interest. We'll reach out to you as soon as our API and partnership programs are ready.
                     </p>
                   </>
                 ) : (
                   <>
-                    <h3 className="text-2xl font-bold text-[#1F2937] mb-2">You're on the waitlist!</h3>
+                    <h3 className="text-2xl font-bold text-[#1F2937] mb-2">
+                      {successData?.isExisting ? "You're already on the waitlist!" : "You're on the waitlist!"}
+                    </h3>
                     <div className="bg-blue-50 text-blue-700 font-bold px-4 py-2 rounded-full mb-6 inline-block">
                       Position: #{successData?.position?.toLocaleString() || '---'}
                     </div>
@@ -637,7 +651,7 @@ export const WaitlistSection = () => {
                         <input 
                           type="text" 
                           readOnly 
-                          value={`https://mydomos.com?ref=${successData?.code}`} 
+                          value={`https://mydomos.org?ref=${successData?.code}`} 
                           className="flex-1 bg-transparent outline-none text-gray-700 text-sm px-2"
                         />
                         <button 
