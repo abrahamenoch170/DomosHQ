@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { User, Building, Network, ArrowRight, ArrowLeft, CheckCircle2, Copy } from 'lucide-react';
+import { User, Building, Network, ArrowRight, ArrowLeft, CheckCircle2, Copy, Check } from 'lucide-react';
 import { doc, runTransaction, serverTimestamp, onSnapshot, getDoc } from 'firebase/firestore';
 import { db } from '../firebase';
 import confetti from 'canvas-confetti';
@@ -57,6 +57,7 @@ export const WaitlistSection = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const [successData, setSuccessData] = useState<{ position?: number; code?: string; isExisting?: boolean; referralCount?: number; points?: number; role?: string } | null>(null);
+  const [isCopied, setIsCopied] = useState(false);
 
   // Form Data
   const [formData, setFormData] = useState({
@@ -365,7 +366,8 @@ export const WaitlistSection = () => {
   const copyToClipboard = () => {
     if (successData?.code) {
       navigator.clipboard.writeText(`https://mydomos.org?ref=${successData.code}`);
-      alert('Referral link copied to clipboard!');
+      setIsCopied(true);
+      setTimeout(() => setIsCopied(false), 2000);
     }
   };
 
@@ -702,10 +704,10 @@ export const WaitlistSection = () => {
                         />
                         <button 
                           onClick={copyToClipboard}
-                          className="p-2 bg-blue-50 text-blue-600 rounded-lg hover:bg-blue-100 transition-colors"
-                          title="Copy to clipboard"
+                          className={`p-2 rounded-lg transition-colors flex items-center justify-center min-w-[36px] ${isCopied ? 'bg-emerald-50 text-emerald-600' : 'bg-blue-50 text-blue-600 hover:bg-blue-100'}`}
+                          title={isCopied ? "Copied!" : "Copy to clipboard"}
                         >
-                          <Copy size={18} />
+                          {isCopied ? <Check size={18} /> : <Copy size={18} />}
                         </button>
                       </div>
                       
