@@ -21,8 +21,8 @@ service cloud.firestore {
       allow create: if isValidWaitlistEntry();
       // Allow update only for incrementing referralCount and points
       allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['referralCount', 'points']) &&
-                    request.resource.data.referralCount == resource.data.referralCount + 1 &&
-                    request.resource.data.points == resource.data.points + 1;
+                    request.resource.data.referralCount == (('referralCount' in resource.data) ? resource.data.referralCount : 0) + 1 &&
+                    request.resource.data.points == (('points' in resource.data) ? resource.data.points : 0) + 1;
     }
 
     match /counters/{counterId} {
@@ -32,7 +32,7 @@ service cloud.firestore {
       allow create: if request.resource.data.keys().hasOnly(['count']) && request.resource.data.count is number;
       // Allow update to increment the counter
       allow update: if request.resource.data.diff(resource.data).affectedKeys().hasOnly(['count']) &&
-                    request.resource.data.count == resource.data.count + 1;
+                    request.resource.data.count == (('count' in resource.data) ? resource.data.count : 0) + 1;
     }
 
     match /waitlist_emails/{email} {

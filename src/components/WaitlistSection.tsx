@@ -7,6 +7,40 @@ import { db } from '../firebase';
 import confetti from 'canvas-confetti';
 import { DomosIllustration } from './DomosIllustration';
 
+enum OperationType {
+  CREATE = 'create',
+  UPDATE = 'update',
+  DELETE = 'delete',
+  LIST = 'list',
+  GET = 'get',
+  WRITE = 'write',
+}
+
+interface FirestoreErrorInfo {
+  error: string;
+  operationType: OperationType;
+  path: string | null;
+  authInfo: {
+    userId?: string;
+    email?: string;
+    emailVerified?: boolean;
+    isAnonymous?: boolean;
+    tenantId?: string;
+    providerInfo?: any[];
+  }
+}
+
+function handleFirestoreError(error: unknown, operationType: OperationType, path: string | null) {
+  const errInfo: FirestoreErrorInfo = {
+    error: error instanceof Error ? error.message : String(error),
+    authInfo: {}, // No auth used for waitlist
+    operationType,
+    path
+  };
+  console.error('Firestore Error: ', JSON.stringify(errInfo));
+  throw new Error(JSON.stringify(errInfo));
+}
+
 const NIGERIAN_STATES = [
   "Abia", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno",
   "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "FCT", "Gombe", "Imo",
@@ -256,8 +290,17 @@ export const WaitlistSection = () => {
       setSuccessData({ position: result.position, code: result.code });
       setStep(4);
     } catch (err: any) {
-      console.error(err);
-      setError(err.message || 'Something went wrong. Please try again.');
+      if (err.message && err.message.includes("Missing or insufficient permissions")) {
+        handleFirestoreError(err, OperationType.WRITE, 'waitlist_transaction');
+      } else {
+        console.error(err);
+        let errorMsg = err.message || 'Something went wrong. Please try again.';
+        try {
+          const parsed = JSON.parse(err.message);
+          if (parsed.error) errorMsg = parsed.error;
+        } catch (e) {}
+        setError(errorMsg);
+      }
     } finally {
       setIsLoading(false);
     }
