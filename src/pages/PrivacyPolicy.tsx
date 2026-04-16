@@ -8,7 +8,7 @@ const PrivacyPolicy = () => {
     <div className="min-h-screen bg-[#F8FAFC] py-12 px-6 md:px-12 lg:px-24">
       <SEOUpdater 
         title="Privacy Policy | MyDomos" 
-        description="Learn how MyDomos protects your personal data and privacy." 
+        description="Learn how MyDomos protects your personal datas and privacy." 
       />
       <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
         <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors">
