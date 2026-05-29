@@ -15,9 +15,9 @@ export const Header = () => {
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className="sticky top-0 z-50 w-full bg-[#FEF7E6]/80 backdrop-blur-md border-b border-black/[0.06] px-6 py-4 flex items-center justify-between"
+      className="sticky top-0 z-50 w-full bg-[#FFF9F6]/80 backdrop-blur-md border-b border-[#FF6B35]/10 px-6 py-4 flex items-center justify-between"
     >
-      <div className="text-xl font-bold text-[#1E3A8A]">DomosHQ</div>
+      <div className="text-xl font-bold text-[#FF6B35] tracking-tight">DomosHQ</div>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
@@ -27,8 +27,8 @@ export const Header = () => {
             href={link.href}
             className={
               link.isButton
-                ? 'bg-[#2563EB] text-white text-sm font-bold px-5 py-2 rounded-full hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]'
-                : 'text-sm font-medium text-[#1F2937] hover:text-[#2563EB] transition-colors focus:outline-none focus:ring-2 focus:ring-[#2563EB] rounded'
+                ? 'bg-[#FF6B35] text-white text-sm font-bold px-5 py-2 rounded-full hover:scale-105 transition-transform duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF6B35]'
+                : 'text-sm font-medium text-[#1F2937] hover:text-[#FF6B35] transition-colors focus:outline-none focus:ring-2 focus:ring-[#FF6B35] rounded'
             }
           >
             {link.name}
@@ -38,7 +38,7 @@ export const Header = () => {
 
       {/* Mobile Hamburger Button */}
       <button
-        className="md:hidden p-2 text-[#1E3A8A] focus:outline-none"
+        className="md:hidden p-2 text-[#FF6B35] focus:outline-none"
         onClick={() => setIsMenuOpen(!isMenuOpen)}
         aria-label="Toggle menu"
       >
@@ -52,7 +52,7 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden absolute top-full left-0 w-full bg-[#FEF7E6] border-b border-black/[0.06] flex flex-col p-6 gap-4"
+            className="md:hidden absolute top-full left-0 w-full bg-[#FFF9F6] border-b border-[#FF6B35]/10 flex flex-col p-6 gap-4"
           >
             {navLinks.map((link) => (
               <a
@@ -61,8 +61,8 @@ export const Header = () => {
                 onClick={() => setIsMenuOpen(false)}
                 className={
                   link.isButton
-                    ? 'bg-[#2563EB] text-white text-center font-bold px-5 py-3 rounded-full hover:scale-[1.02] transition-transform duration-200'
-                    : 'text-lg font-medium text-[#1F2937] hover:text-[#2563EB] transition-colors py-2'
+                    ? 'bg-[#FF6B35] text-white text-center font-bold px-5 py-3 rounded-full hover:scale-[1.02] transition-transform duration-200'
+                    : 'text-lg font-medium text-[#1F2937] hover:text-[#FF6B35] transition-colors py-2'
                 }
               >
                 {link.name}

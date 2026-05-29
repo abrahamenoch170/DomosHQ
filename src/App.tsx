@@ -38,8 +38,8 @@ export default function App() {
   };
 
   return (
-    // Changed to #FEF7E6 as requested
-    <main ref={containerRef} className="w-full bg-[#FEF7E6] relative min-h-[400vh] font-sans text-[#1F2937] selection:bg-[#2563EB] selection:text-white">
+    // Changed to #FFF9F6 as requested for rebranding
+    <main ref={containerRef} className="w-full bg-[#FFF9F6] relative min-h-[400vh] font-sans text-[#1F2937] selection:bg-[#FF6B35] selection:text-white">
       <Header />
       {/* Container for your content, illustrations, and text */}
       <div className="relative z-10 pointer-events-none w-full h-full">
@@ -58,12 +58,12 @@ export default function App() {
               initial="hidden"
               animate="visible"
             >
-              <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#1E3A8A]">
+              <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
                 The New Standard
               </div>
               <motion.h1 
                 variants={itemVariants}
-                className="text-[2.5rem] lg:text-[3.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-3"
+                className="text-[2.5rem] lg:text-[3.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em] mb-3"
               >
                 Rent without getting scammed.
               </motion.h1>
@@ -76,7 +76,7 @@ export default function App() {
               </motion.p>
               
               <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start w-full">
-                <a href="#waitlist" className="bg-[#2563EB] text-white font-bold text-[1rem] px-[32px] py-[12px] rounded-[40px] hover:scale-[1.02] hover:shadow-[0_10px_25px_-5px_rgba(37,99,235,0.4)] transition-all duration-300 ease-in-out flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#2563EB]">
+                <a href="#waitlist" className="bg-[#FF6B35] text-white font-bold text-[1rem] px-[32px] py-[12px] rounded-[40px] hover:scale-[1.02] hover:shadow-[0_10px_25px_-5px_rgba(255,107,53,0.4)] transition-all duration-300 ease-in-out flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF6B35]">
                   Join the Waitlist &rarr;
                 </a>
                 <p className="text-[0.75rem] text-[#6B7280] mt-4 max-w-md">
@@ -109,10 +109,10 @@ export default function App() {
               transition={{ type: "spring", stiffness: 100, damping: 20 }}
               className="flex flex-col items-center text-center mb-16"
             >
-              <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#1E3A8A]">
+              <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
                 The Problem
               </div>
-              <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-4">
+              <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em] mb-4">
                 Renting in Africa still hurts too many people.
               </h2>
               <p className="text-[#6B7280] text-[1.125rem] max-w-2xl">
@@ -187,7 +187,7 @@ export default function App() {
                 className="bg-white/60 backdrop-blur-md border border-black/[0.06] rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group"
               >
                 <div className="w-full bg-white/80 rounded-xl p-4 border border-black/[0.04] shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
-                  <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
+                  <div className="w-8 h-8 rounded-full bg-[#FFEBE2] flex items-center justify-center text-[#FF6B35]">
                     <Database size={16} />
                   </div>
                   <div className="flex flex-col">
@@ -230,7 +230,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#1E3A8A] mb-4"
+              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#FF6B35] mb-4"
             >
               MyDomos is the missing trust layer for African renting.
             </motion.h2>
@@ -267,7 +267,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#1E3A8A] text-center mb-16"
+              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#FF6B35] text-center mb-16"
             >
               How It Works
             </motion.h2>
@@ -279,9 +279,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm flex flex-col items-center text-center"
+                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#FF6B35]/10 flex flex-col items-center text-center"
               >
-                <div className="w-10 h-10 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-bold mb-4 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-bold mb-4 shrink-0">
                   1
                 </div>
                 <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-6">
@@ -298,9 +298,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm flex flex-col items-center text-center"
+                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#FF6B35]/10 flex flex-col items-center text-center"
               >
-                <div className="w-10 h-10 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-bold mb-4 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-bold mb-4 shrink-0">
                   2
                 </div>
                 <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-6">
@@ -317,9 +317,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm flex flex-col items-center text-center"
+                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#FF6B35]/10 flex flex-col items-center text-center"
               >
-                <div className="w-10 h-10 rounded-full bg-[#2563EB] text-white flex items-center justify-center font-bold mb-4 shrink-0">
+                <div className="w-10 h-10 rounded-full bg-[#FF6B35] text-white flex items-center justify-center font-bold mb-4 shrink-0">
                   3
                 </div>
                 <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-6">
@@ -343,7 +343,7 @@ export default function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#1E3A8A] text-center mb-16"
+              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#FF6B35] text-center mb-16"
             >
               Built for Everyone
             </motion.h2>
@@ -355,9 +355,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-start text-left"
+                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#FF6B35]/5 hover:border-[#FF6B35]/20 hover:shadow-md hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-start text-left"
               >
-                <div className="card-icon w-[60px] h-[60px] rounded-[12px] bg-gray-100 flex items-center justify-center text-[#1E3A8A] mb-6 shrink-0">
+                <div className="card-icon w-[60px] h-[60px] rounded-[12px] bg-[#FFF0EA] flex items-center justify-center text-[#FF6B35] mb-6 shrink-0">
                   <User size={28} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-3">
@@ -374,9 +374,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-start text-left"
+                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#FF6B35]/5 hover:border-[#FF6B35]/20 hover:shadow-md hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-start text-left"
               >
-                <div className="card-icon w-[60px] h-[60px] rounded-[12px] bg-gray-100 flex items-center justify-center text-[#1E3A8A] mb-6 shrink-0">
+                <div className="card-icon w-[60px] h-[60px] rounded-[12px] bg-[#FFF0EA] flex items-center justify-center text-[#FF6B35] mb-6 shrink-0">
                   <Building size={28} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-3">
@@ -393,9 +393,9 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm hover:shadow-md hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-start text-left"
+                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#FF6B35]/5 hover:border-[#FF6B35]/20 hover:shadow-md hover:-translate-y-1 transition-all duration-200 ease-in-out flex flex-col items-start text-left"
               >
-                <div className="card-icon w-[60px] h-[60px] rounded-[12px] bg-gray-100 flex items-center justify-center text-[#1E3A8A] mb-6 shrink-0">
+                <div className="card-icon w-[60px] h-[60px] rounded-[12px] bg-[#FFF0EA] flex items-center justify-center text-[#FF6B35] mb-6 shrink-0">
                   <Network size={28} strokeWidth={1.5} />
                 </div>
                 <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-3">
@@ -425,11 +425,11 @@ export default function App() {
             transition={{ type: "spring", stiffness: 100, damping: 20 }}
             className="max-w-3xl mx-auto w-full flex flex-col items-center text-center"
           >
-            <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#1E3A8A]">
+            <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
               Transparency
             </div>
             
-            <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-4">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em] mb-4">
               Building in public, every week.
             </h2>
             
@@ -446,7 +446,7 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on X (Twitter)"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Twitter size={20} />
               </motion.a>
@@ -457,7 +457,7 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on LinkedIn"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Linkedin size={20} />
               </motion.a>
@@ -468,7 +468,7 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on Facebook"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Facebook size={20} />
               </motion.a>
@@ -479,14 +479,14 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on Instagram"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Instagram size={20} />
               </motion.a>
             </div>
 
             <p className="text-[0.875rem] text-[#6B7280]">
-              Still hiring equity, volunteers, and interns – email <a href="mailto:careers@mydomos.org" className="text-[#2563EB] hover:underline font-medium">careers@mydomos.org</a>
+              Still hiring equity, volunteers, and interns – email <a href="mailto:careers@mydomos.org" className="text-[#FF6B35] hover:underline font-medium">careers@mydomos.org</a>
             </p>
           </motion.div>
         </section>
@@ -511,33 +511,33 @@ export default function App() {
             </div>
 
             {/* Row 2: Tagline */}
-            <div className="text-[0.875rem] font-semibold text-[#1E3A8A]">
+            <div className="text-[0.875rem] font-semibold text-[#FF6B35]">
               MyDomos — Africa's rental trust infrastructure
             </div>
 
             {/* Row 3: Social Icons */}
             <div className="flex items-center gap-4 mt-2">
-              <a href="https://x.com/DomosHQ" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-[#6B7280] hover:text-[#2563EB] hover:scale-110 transition-all cursor-pointer">
+              <a href="https://x.com/DomosHQ" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" className="text-[#6B7280] hover:text-[#FF6B35] hover:scale-110 transition-all cursor-pointer">
                 <Twitter size={18} />
               </a>
-              <a href="https://www.linkedin.com/company/domoshq/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#6B7280] hover:text-[#2563EB] hover:scale-110 transition-all cursor-pointer">
+              <a href="https://www.linkedin.com/company/domoshq/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-[#6B7280] hover:text-[#FF6B35] hover:scale-110 transition-all cursor-pointer">
                 <Linkedin size={18} />
               </a>
-              <a href="https://www.facebook.com/profile.php?id=61576522395409" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#6B7280] hover:text-[#2563EB] hover:scale-110 transition-all cursor-pointer">
+              <a href="https://www.facebook.com/profile.php?id=61576522395409" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-[#6B7280] hover:text-[#FF6B35] hover:scale-110 transition-all cursor-pointer">
                 <Facebook size={18} />
               </a>
-              <a href="https://www.instagram.com/domoshq?igsh=MTE1b2xmamxwcDZlag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#6B7280] hover:text-[#2563EB] hover:scale-110 transition-all cursor-pointer">
+              <a href="https://www.instagram.com/domoshq?igsh=MTE1b2xmamxwcDZlag==" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-[#6B7280] hover:text-[#FF6B35] hover:scale-110 transition-all cursor-pointer">
                 <Instagram size={18} />
               </a>
             </div>
 
             {/* Row 4: Links */}
             <div className="text-[0.75rem] text-[#4B5563] flex items-center justify-center gap-x-3 gap-y-2 flex-wrap">
-              <Link to="/privacy" className="hover:text-[#2563EB] transition-colors">Privacy Policy</Link>
+              <Link to="/privacy" className="hover:text-[#FF6B35] transition-colors">Privacy Policy</Link>
               <span className="text-gray-300 hidden sm:inline">|</span>
-              <Link to="/terms" className="hover:text-[#2563EB] transition-colors">Terms of Use</Link>
+              <Link to="/terms" className="hover:text-[#FF6B35] transition-colors">Terms of Use</Link>
               <span className="text-gray-300 hidden sm:inline">|</span>
-              <a href="mailto:hello@mydomos.org" className="hover:text-[#2563EB] transition-colors font-medium">hello@mydomos.org</a>
+              <a href="mailto:hello@mydomos.org" className="hover:text-[#FF6B35] transition-colors font-medium">hello@mydomos.org</a>
             </div>
 
             {/* Row 5: Copyright */}

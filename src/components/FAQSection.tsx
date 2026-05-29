@@ -37,7 +37,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10 bg-white/40 backdrop-blur-sm border-t border-black/[0.04]">
+    <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10 bg-white/40 backdrop-blur-sm border-t border-[#FF6B35]/10">
       <div className="max-w-3xl mx-auto w-full flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,10 +46,10 @@ export const FAQSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-12"
         >
-          <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#1E3A8A]">
+          <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
             Got Questions?
           </div>
-          <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em]">
+          <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em]">
             Frequently Asked Questions
           </h2>
         </motion.div>
