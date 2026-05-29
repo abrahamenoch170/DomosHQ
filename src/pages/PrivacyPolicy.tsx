@@ -1,15 +1,10 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { SEOUpdater } from '../components/SEOUpdater';
 
 const PrivacyPolicy = () => {
   return (
     <div className="min-h-screen bg-[#F8FAFC] py-12 px-6 md:px-12 lg:px-24">
-      <SEOUpdater 
-        title="Privacy Policy | MyDomos" 
-        description="Learn how MyDomos protects your personal data and privacy." 
-      />
       <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
         <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors">
           <ArrowLeft size={20} /> Back to Home
@@ -70,7 +65,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-xl font-bold text-[#1F2937] mb-3">6. Contact Us</h2>
             <p>
-              If you have any questions about this privacy policy or our privacy practices, please contact us at: <a href="mailto:hello@mydomos.com" className="text-blue-600 hover:underline">hello@mydomos.com</a>
+              If you have any questions about this privacy policy or our privacy practices, please contact us at: <a href="mailto:hello@mydomos.org" className="text-blue-600 hover:underline">hello@mydomos.org</a>
             </p>
           </section>
         </div>

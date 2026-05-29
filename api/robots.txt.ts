@@ -1,0 +1,6 @@
+import { VercelRequest, VercelResponse } from '@vercel/node';
+
+export default (req: VercelRequest, res: VercelResponse) => {
+  res.setHeader('Content-Type', 'text/plain');
+  res.send('User-agent: *\nAllow: /\nSitemap: https://mydomos.org/sitemap.xml');
+};

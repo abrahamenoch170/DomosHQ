@@ -8,7 +8,6 @@ import { WaitlistSection } from './components/WaitlistSection';
 import { FAQSection } from './components/FAQSection';
 import { SearchHouseAnimation, ShieldLockAnimation, PaymentCalendarAnimation } from './components/HowItWorksAnimations';
 import { Header } from './components/Header';
-import { SEOUpdater } from './components/SEOUpdater';
 
 export default function App() {
   const containerRef = useRef(null);
@@ -41,10 +40,6 @@ export default function App() {
   return (
     // Changed to #FEF7E6 as requested
     <main ref={containerRef} className="w-full bg-[#FEF7E6] relative min-h-[400vh] font-sans text-[#1F2937] selection:bg-[#2563EB] selection:text-white">
-      <SEOUpdater 
-        title="DomosHQ – Rental Trust Infrastructure for Africa | Secure Rent Payments, Savings & Loans"
-        description="DomosHQ is the premier rental trust infrastructure platform for Africa. Secure your property transactions, automate rent payments, access rent loans, and build savings on one trusted platform."
-      />
       <Header />
       {/* Container for your content, illustrations, and text */}
       <div className="relative z-10 pointer-events-none w-full h-full">
@@ -68,7 +63,7 @@ export default function App() {
               </div>
               <motion.h1 
                 variants={itemVariants}
-                className="text-[2.5rem] lg:text-[3.5rem] font-bold text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-3"
+                className="text-[2.5rem] lg:text-[3.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-3"
               >
                 Rent without getting scammed.
               </motion.h1>
@@ -117,7 +112,7 @@ export default function App() {
               <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#1E3A8A]">
                 The Problem
               </div>
-              <h2 className="text-[2rem] lg:text-[2.5rem] font-bold text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-4">
+              <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-4">
                 Renting in Africa still hurts too many people.
               </h2>
               <p className="text-[#6B7280] text-[1.125rem] max-w-2xl">
@@ -133,9 +128,9 @@ export default function App() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.1 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white/60 backdrop-blur-md border border-black/6 rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group"
+                className="bg-white/60 backdrop-blur-md border border-black/[0.06] rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group"
               >
-                <div className="w-full bg-white/80 rounded-xl p-4 border border-black/4 shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
+                <div className="w-full bg-white/80 rounded-xl p-4 border border-black/[0.04] shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
                   <div className="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-600">
                     <ReceiptText size={16} />
                   </div>
@@ -145,7 +140,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 mt-auto">
-                  <h3 className="text-[#1F2937] font-bold text-xl leading-[1.08] tracking-[-0.04em]">
+                  <h3 className="text-[#1F2937] font-[700] text-xl leading-[1.08] tracking-[-0.04em]">
                     You send money. Agent disappears.
                   </h3>
                   <p className="text-[#6B7280] text-sm leading-relaxed">
@@ -161,9 +156,9 @@ export default function App() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white/60 backdrop-blur-md border border-black/6 rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group md:translate-y-8"
+                className="bg-white/60 backdrop-blur-md border border-black/[0.06] rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group md:translate-y-8"
               >
-                <div className="w-full bg-white/80 rounded-xl p-4 border border-black/4 shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
+                <div className="w-full bg-white/80 rounded-xl p-4 border border-black/[0.04] shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
                   <div className="w-8 h-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-600">
                     <BadgeCheck size={16} />
                   </div>
@@ -173,7 +168,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 mt-auto">
-                  <h3 className="text-[#1F2937] font-bold text-xl leading-[1.08] tracking-[-0.04em]">
+                  <h3 className="text-[#1F2937] font-[700] text-xl leading-[1.08] tracking-[-0.04em]">
                     Landlords chase payments.
                   </h3>
                   <p className="text-[#6B7280] text-sm leading-relaxed">
@@ -189,9 +184,9 @@ export default function App() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.3 }}
                 whileHover={{ scale: 1.02 }}
-                className="bg-white/60 backdrop-blur-md border border-black/6 rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group"
+                className="bg-white/60 backdrop-blur-md border border-black/[0.06] rounded-[24px] p-8 flex flex-col items-start gap-6 relative overflow-hidden group"
               >
-                <div className="w-full bg-white/80 rounded-xl p-4 border border-black/4 shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
+                <div className="w-full bg-white/80 rounded-xl p-4 border border-black/[0.04] shadow-sm flex items-center gap-3 transform group-hover:-translate-y-1 transition-transform duration-300">
                   <div className="w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-blue-600">
                     <Database size={16} />
                   </div>
@@ -201,7 +196,7 @@ export default function App() {
                   </div>
                 </div>
                 <div className="flex flex-col gap-2 mt-auto">
-                  <h3 className="text-[#1F2937] font-bold text-xl leading-[1.08] tracking-[-0.04em]">
+                  <h3 className="text-[#1F2937] font-[700] text-xl leading-[1.08] tracking-[-0.04em]">
                     No records. No proof.
                   </h3>
                   <p className="text-[#6B7280] text-sm leading-relaxed">
@@ -434,11 +429,11 @@ export default function App() {
               Transparency
             </div>
             
-            <h2 className="text-[2rem] lg:text-[2.5rem] font-bold text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-4">
+            <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#1E3A8A] leading-[1.08] tracking-[-0.04em] mb-4">
               Building in public, every week.
             </h2>
             
-            <p className="text-[1.125rem] text-[#4B5563] leading-normal max-w-[600px] mb-8">
+            <p className="text-[1.125rem] text-[#4B5563] leading-[1.5] max-w-[600px] mb-8">
               We're building to fix renting across Africa.<br className="hidden sm:block" />
               Follow our journey.
             </p>
@@ -451,7 +446,7 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on X (Twitter)"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/6 flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
               >
                 <Twitter size={20} />
               </motion.a>
@@ -462,7 +457,7 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on LinkedIn"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/6 flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
               >
                 <Linkedin size={20} />
               </motion.a>
@@ -473,7 +468,7 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on Facebook"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/6 flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
               >
                 <Facebook size={20} />
               </motion.a>
@@ -484,14 +479,14 @@ export default function App() {
                 target="_blank" 
                 rel="noopener noreferrer" 
                 aria-label="Follow us on Instagram"
-                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/6 flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
+                className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#1E3A8A] hover:text-[#2563EB] cursor-pointer"
               >
                 <Instagram size={20} />
               </motion.a>
             </div>
 
             <p className="text-[0.875rem] text-[#6B7280]">
-              Still hiring equity, volunteers, and interns – email <a href="mailto:careers@mydomos.com" className="text-[#2563EB] hover:underline font-medium">careers@mydomos.com</a>
+              Still hiring equity, volunteers, and interns – email <a href="mailto:careers@mydomos.org" className="text-[#2563EB] hover:underline font-medium">careers@mydomos.org</a>
             </p>
           </motion.div>
         </section>
@@ -542,7 +537,7 @@ export default function App() {
               <span className="text-gray-300 hidden sm:inline">|</span>
               <Link to="/terms" className="hover:text-[#2563EB] transition-colors">Terms of Use</Link>
               <span className="text-gray-300 hidden sm:inline">|</span>
-              <a href="mailto:hello@mydomos.com" className="hover:text-[#2563EB] transition-colors font-medium">hello@mydomos.com</a>
+              <a href="mailto:hello@mydomos.org" className="hover:text-[#2563EB] transition-colors font-medium">hello@mydomos.org</a>
             </div>
 
             {/* Row 5: Copyright */}
