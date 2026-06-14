@@ -17,7 +17,7 @@ export const Header = () => {
       animate={{ y: 0 }}
       className="sticky top-0 z-50 w-full bg-[#FFF9F6]/80 backdrop-blur-md border-b border-[#FF6B35]/10 px-6 py-4 flex items-center justify-between"
     >
-      <div className="text-xl font-bold text-[#FF6B35] tracking-tight">DomosHQ</div>
+      <div className="text-xl font-bold text-[#FF6B35] tracking-tight">MyDomos Africa</div>
 
       {/* Desktop Navigation */}
       <nav className="hidden md:flex items-center gap-6" aria-label="Main navigation">
