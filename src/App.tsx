@@ -542,7 +542,7 @@ export default function App() {
 
             {/* Row 5: Copyright */}
             <div className="text-[0.7rem] text-[#9CA3AF] mt-2">
-              © {new Date().getFullYear()} MyDomos. All rights reserved.
+              © {new Date().getFullYear()} DomosHQ. All rights reserved.
             </div>
 
           </div>
