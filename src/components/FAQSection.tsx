@@ -82,7 +82,7 @@ export const FAQSection = () => {
                   <ChevronDown size={20} />
                 </motion.div>
               </button>
-              
+
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -92,7 +92,7 @@ export const FAQSection = () => {
                     transition={{ duration: 0.3, ease: "easeInOut" }}
                     itemProp="acceptedAnswer"
                     itemScope
-                    itemType="https://schema.org/Answer"
+                    itemType="https://schema.org/acceptedAnswer"
                   >
                     <div itemProp="text" className="px-6 pb-5 text-[#4B5563] text-[1rem] leading-relaxed">
                       {faq.answer}
