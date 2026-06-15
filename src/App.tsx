@@ -30,8 +30,8 @@ export default function App() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: { type: "spring", stiffness: 100, damping: 20 }
     },
@@ -43,16 +43,16 @@ export default function App() {
       <Header />
       {/* Container for your content, illustrations, and text */}
       <div className="relative z-10 pointer-events-none w-full h-full">
-        
+
         {/* Hero Section */}
         <section className="relative min-h-screen w-full flex items-center justify-center px-6 md:px-12 lg:px-24 pt-24 pb-12 pointer-events-auto overflow-hidden">
           {/* The background map is now static and confined to the Hero section */}
           <BackgroundMap />
-          
+
           <div className="max-w-7xl mx-auto w-full flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
-            
+
             {/* Text Content (60% on desktop) */}
-            <motion.div 
+            <motion.div
               className="w-full lg:w-[60%] text-center lg:text-left flex flex-col items-center lg:items-start z-10"
               variants={containerVariants}
               initial="hidden"
@@ -61,20 +61,20 @@ export default function App() {
               <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
                 The New Standard
               </div>
-              <motion.h1 
+              <motion.h1
                 variants={itemVariants}
                 className="text-[2.5rem] lg:text-[3.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em] mb-3"
               >
                 Rent without getting scammed.
               </motion.h1>
-              
-              <motion.p 
+
+              <motion.p
                 variants={itemVariants}
                 className="text-[1.25rem] font-normal text-[#1F2937] mb-8 max-w-xl"
               >
                 Pay monthly. Keep proof. Move in with confidence.
               </motion.p>
-              
+
               <motion.div variants={itemVariants} className="flex flex-col items-center lg:items-start w-full">
                 <a href="#waitlist" className="bg-[#FF6B35] text-white font-bold text-[1rem] px-[32px] py-[12px] rounded-[40px] hover:scale-[1.02] hover:shadow-[0_10px_25px_-5px_rgba(255,107,53,0.4)] transition-all duration-300 ease-in-out flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FF6B35]">
                   Join the Waitlist &rarr;
@@ -86,7 +86,7 @@ export default function App() {
             </motion.div>
 
             {/* Illustration (40% on desktop) */}
-            <motion.div 
+            <motion.div
               className="w-[80%] lg:w-[40%] flex justify-center lg:justify-end z-10 mt-12 lg:mt-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -101,7 +101,7 @@ export default function App() {
         {/* Problem Section */}
         <section id="problem" className="w-full px-6 md:px-12 lg:px-24 py-32 pointer-events-auto relative z-10">
           <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
-            
+
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -122,7 +122,7 @@ export default function App() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full mb-16">
               {/* Card 1 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -150,7 +150,7 @@ export default function App() {
               </motion.div>
 
               {/* Card 2 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -178,7 +178,7 @@ export default function App() {
               </motion.div>
 
               {/* Card 3 */}
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
@@ -224,7 +224,7 @@ export default function App() {
         {/* Infrastructure Solution Section */}
         <section id="solution" className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10">
           <div className="max-w-7xl mx-auto w-full flex flex-col items-center text-center">
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -261,7 +261,7 @@ export default function App() {
         {/* How It Works Section */}
         <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10">
           <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -337,7 +337,7 @@ export default function App() {
         {/* Built for Everyone Section */}
         <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10">
           <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
-            
+
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -428,56 +428,56 @@ export default function App() {
             <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
               Transparency
             </div>
-            
+
             <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em] mb-4">
               Building in public, every week.
             </h2>
-            
+
             <p className="text-[1.125rem] text-[#4B5563] leading-[1.5] max-w-[600px] mb-8">
               We're building to fix renting across Africa.<br className="hidden sm:block" />
               Follow our journey.
             </p>
-            
+
             <div className="flex items-center gap-4 mb-10">
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, opacity: 0.8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                href="https://x.com/DomosHQ" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="https://x.com/DomosHQ"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Follow us on X (Twitter)"
                 className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Twitter size={20} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, opacity: 0.8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                href="https://www.linkedin.com/company/domoshq/" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="https://www.linkedin.com/company/domoshq/"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Follow us on LinkedIn"
                 className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Linkedin size={20} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, opacity: 0.8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                href="https://www.facebook.com/profile.php?id=61576522395409" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="https://www.facebook.com/profile.php?id=61576522395409"
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Follow us on Facebook"
                 className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
                 <Facebook size={20} />
               </motion.a>
-              <motion.a 
+              <motion.a
                 whileHover={{ scale: 1.1, opacity: 0.8 }}
                 transition={{ type: "spring", stiffness: 400, damping: 10 }}
-                href="https://www.instagram.com/domoshq?igsh=MTE1b2xmamxwcDZlag==" 
-                target="_blank" 
-                rel="noopener noreferrer" 
+                href="https://www.instagram.com/domoshq?igsh=MTE1b2xmamxwcDZlag=="
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Follow us on Instagram"
                 className="w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-black/[0.06] flex items-center justify-center text-[#FF6B35] hover:text-[#E0531E] cursor-pointer"
               >
@@ -492,7 +492,7 @@ export default function App() {
         </section>
 
         {/* Footer */}
-        <motion.footer 
+        <motion.footer
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
@@ -500,7 +500,7 @@ export default function App() {
           className="w-full bg-white/60 backdrop-blur-md border-t border-[#E5E7EB] py-16 px-6 pointer-events-auto relative z-10 mt-16"
         >
           <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-8">
-            
+
             {/* Row 1: Regions */}
             <div className="text-[0.75rem] text-[#6B7280] flex items-center justify-center gap-2 flex-wrap font-medium tracking-wide uppercase">
               <span>🇳🇬 Nigeria</span>
@@ -553,7 +553,7 @@ export default function App() {
 
             {/* Row 5: Copyright */}
             <div className="text-[0.7rem] text-[#9CA3AF] mt-2">
-              © {new Date().getFullYear()} MyDomos Africa. All rights reserved.
+              © {new Date().getFullYear()} DomosHQ. All rights reserved.
             </div>
 
           </div>
