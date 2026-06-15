@@ -105,20 +105,31 @@
               { "@type": "Question", "name": "Can I save or take loans with MyDomos?", "acceptedAnswer": { "@type": "Answer", "text": "The platform offers rent savings plans and access to micro‑loans for qualifying tenants." } }
             ]
           },
+                    {
+            "@type": "Product",
+            "name": "MyDomos Africa Platform",
+            "description": "Rental trust infrastructure for secure property transactions, rent payments, savings, and loans.",
+            "image": "https://www.mydomos.org/og-image.png",
+            "brand": { "@type": "Organization", "@id": "https://www.mydomos.org/" },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://www.mydomos.org",
+              "priceCurrency": "USD",
+              "price": "0",
+              "availability": "https://schema.org/InStock",
+              "shippingDetails": {
+                "@type": "OfferShippingDetails",
+                "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" }
+              },
+              "hasMerchantReturnPolicy": { "@type": "MerchantReturnPolicy", "url": "https://www.mydomos.org/return-policy" }
+            }
+          },
           {
-  "@type": "Product",
-  "name": "MyDomos Africa Platform",
-  "description": "Rental trust infrastructure for secure property transactions, rent payments, savings, and loans.",
-  "image": "https://www.mydomos.org/og-image.png",
-  "brand": { "@id": "https://www.mydomos.org" },  
-    }
-},
-{
-  "@type": "SoftwareApplication",
-  "name": "MyDomos Africa App",
-  "applicationCategory": "FinanceApplication",
-  "operatingSystem": "Web, iOS, Android"
-}
+            "@type": "SoftwareApplication",
+            "name": "MyDomos Africa App",
+            "applicationCategory": "FinanceApplication",
+            "operatingSystem": "Web, iOS, Android"
+          }
       
     </script>
 </head>
