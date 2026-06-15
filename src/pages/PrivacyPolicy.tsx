@@ -1,10 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
+  useEffect(() => {
+    document.title = "Privacy Policy – MyDomos Africa | Data Security & User Privacy";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Read the MyDomos Africa Privacy Policy. Learn how we securely protect your personal details, email contacts, and financial records.");
+    }
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", "https://www.mydomos.org/privacy");
+    }
+    return () => {
+      if (canonical) {
+        canonical.setAttribute("href", "https://www.mydomos.org");
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F8FAFC] py-12 px-6 md:px-12 lg:px-24">
+      {/* Breadcrumb Schema Markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mydomos.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Privacy Policy",
+              "item": "https://www.mydomos.org/privacy"
+            }
+          ]
+        })}
+      </script>
       <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
         <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors">
           <ArrowLeft size={20} /> Back to Home

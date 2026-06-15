@@ -54,7 +54,7 @@ export const FAQSection = () => {
           </h2>
         </motion.div>
 
-        <div className="w-full flex flex-col gap-4">
+        <div className="w-full flex flex-col gap-4" itemScope itemType="https://schema.org/FAQPage">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -63,14 +63,17 @@ export const FAQSection = () => {
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
               className="bg-white/80 backdrop-blur-md border border-black/[0.06] rounded-2xl overflow-hidden"
+              itemProp="mainEntity"
+              itemScope
+              itemType="https://schema.org/Question"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
               >
-                <span className="text-[#1F2937] font-semibold text-[1.125rem] pr-4">
+                <h3 itemProp="name" className="text-[#1F2937] font-semibold text-[1.125rem] pr-4 inline">
                   {faq.question}
-                </span>
+                </h3>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -87,8 +90,11 @@ export const FAQSection = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
+                    itemProp="acceptedAnswer"
+                    itemScope
+                    itemType="https://schema.org/Answer"
                   >
-                    <div className="px-6 pb-5 text-[#4B5563] text-[1rem] leading-relaxed">
+                    <div itemProp="text" className="px-6 pb-5 text-[#4B5563] text-[1rem] leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>

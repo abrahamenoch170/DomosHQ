@@ -1,3 +1,22 @@
 User-agent: *
 Allow: /
-Sitemap: https://domoshq.com/sitemap.xml
+Disallow: /api/
+Disallow: /admin/
+Disallow: /waitlist-success
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+Sitemap: https://www.mydomos.org/sitemap.xml

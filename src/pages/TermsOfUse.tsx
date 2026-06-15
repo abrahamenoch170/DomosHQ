@@ -1,10 +1,48 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TermsOfUse = () => {
+  useEffect(() => {
+    document.title = "Terms of Use – MyDomos Africa | Rental Trust Service Agreement";
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", "Review the Terms of Use for MyDomos Africa. Understand user responsibilities, rental escrow transaction terms, and legal safety guidelines.");
+    }
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (canonical) {
+      canonical.setAttribute("href", "https://www.mydomos.org/terms");
+    }
+    return () => {
+      if (canonical) {
+        canonical.setAttribute("href", "https://www.mydomos.org");
+      }
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#F8FAFC] py-12 px-6 md:px-12 lg:px-24">
+      {/* Breadcrumb Schema Markup */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://www.mydomos.org/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Terms of Use",
+              "item": "https://www.mydomos.org/terms"
+            }
+          ]
+        })}
+      </script>
       <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
         <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors">
           <ArrowLeft size={20} /> Back to Home

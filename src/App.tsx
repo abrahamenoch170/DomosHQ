@@ -538,11 +538,22 @@ export default function App() {
               <Link to="/terms" className="hover:text-[#FF6B35] transition-colors">Terms of Use</Link>
               <span className="text-gray-300 hidden sm:inline">|</span>
               <a href="mailto:hello@mydomos.org" className="hover:text-[#FF6B35] transition-colors font-medium">hello@mydomos.org</a>
+              <span className="text-gray-300 hidden sm:inline">|</span>
+              <a href="/sitemap.xml" className="hover:text-[#FF6B35] transition-colors">Sitemap</a>
+            </div>
+
+            {/* Office Addresses */}
+            <div className="text-[0.65rem] text-[#9CA3AF] flex flex-col sm:flex-row items-center justify-center gap-x-4 gap-y-1 mt-1">
+              <span>🇳🇬 Lagos, Nigeria</span>
+              <span className="text-gray-300 hidden sm:inline">·</span>
+              <span>🇬🇭 Accra, Ghana</span>
+              <span className="text-gray-300 hidden sm:inline">·</span>
+              <span>🇿🇦 Johannesburg, South Africa</span>
             </div>
 
             {/* Row 5: Copyright */}
             <div className="text-[0.7rem] text-[#9CA3AF] mt-2">
-              © {new Date().getFullYear()} DomosHQ. All rights reserved.
+              © {new Date().getFullYear()} MyDomos Africa. All rights reserved.
             </div>
 
           </div>

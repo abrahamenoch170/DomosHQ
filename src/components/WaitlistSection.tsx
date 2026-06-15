@@ -464,7 +464,9 @@ export const WaitlistSection = () => {
                   </button>
                 </div>
 
-                {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
+                <div className="min-h-[24px] flex items-center justify-center mb-4">
+                  <p className={`text-red-500 text-sm text-center transition-opacity duration-200 ${error ? 'opacity-100' : 'opacity-0'}`}>{error || ' '}</p>
+                </div>
 
                 <div className="mt-auto flex justify-end">
                   <button 
@@ -577,16 +579,16 @@ export const WaitlistSection = () => {
                       <div className="col-span-1 md:col-span-2 mt-2">
                         <label className="block text-sm font-medium text-gray-700 mb-2">Integration Interest</label>
                         <div className="flex flex-wrap gap-4">
-                          <label className="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" checked={formData.integrationInterest.API} onChange={() => handleCheckboxChange('API')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35]" />
+                          <label className="flex items-center gap-2 cursor-pointer py-3 px-2 min-h-[48px]">
+                            <input type="checkbox" checked={formData.integrationInterest.API} onChange={() => handleCheckboxChange('API')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35] min-w-[20px] min-h-[20px]" />
                             <span className="text-sm text-gray-700">API</span>
                           </label>
-                          <label className="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" checked={formData.integrationInterest.Referral} onChange={() => handleCheckboxChange('Referral')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35]" />
+                          <label className="flex items-center gap-2 cursor-pointer py-3 px-2 min-h-[48px]">
+                            <input type="checkbox" checked={formData.integrationInterest.Referral} onChange={() => handleCheckboxChange('Referral')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35] min-w-[20px] min-h-[20px]" />
                             <span className="text-sm text-gray-700">Referral partnership</span>
                           </label>
-                          <label className="flex items-center gap-2 cursor-pointer">
-                            <input type="checkbox" checked={formData.integrationInterest.Other} onChange={() => handleCheckboxChange('Other')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35]" />
+                          <label className="flex items-center gap-2 cursor-pointer py-3 px-2 min-h-[48px]">
+                            <input type="checkbox" checked={formData.integrationInterest.Other} onChange={() => handleCheckboxChange('Other')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35] min-w-[20px] min-h-[20px]" />
                             <span className="text-sm text-gray-700">Other</span>
                           </label>
                         </div>
@@ -595,7 +597,9 @@ export const WaitlistSection = () => {
                   )}
                 </div>
 
-                {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
+                <div className="min-h-[24px] flex items-center justify-center mb-4">
+                  <p className={`text-red-500 text-sm text-center transition-opacity duration-200 ${error ? 'opacity-100' : 'opacity-0'}`}>{error || ' '}</p>
+                </div>
 
                 <div className="mt-auto flex justify-between">
                   <button 
@@ -642,7 +646,9 @@ export const WaitlistSection = () => {
                   />
                 </div>
 
-                {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
+                <div className="min-h-[24px] flex items-center justify-center mb-4">
+                  <p className={`text-red-500 text-sm text-center transition-opacity duration-200 ${error ? 'opacity-100' : 'opacity-0'}`}>{error || ' '}</p>
+                </div>
 
                 <div className="mt-auto flex justify-between">
                   <button 
