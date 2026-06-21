@@ -307,7 +307,7 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
                 className="bg-white rounded-[24px] p-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 text-left"
               >
-                <img src="https://i.postimg.cc/ht6W1x91/68b07306391b4b688a5d4596ab51e043.png" alt="Pay safely with clear shared records and monthly options" className="w-full max-h-[260px] object-contain mb-6 mx-auto" />
+                <img src="https://i.postimg.cc/ht6W1x91/68b07306391b4b688a5d4596ab51e043.png" alt="Pay safely with clear shared records and monthly options" className="w-full max-h-[260px] object-contain mb-6 mx-auto mix-blend-multiply" style={{ filter: "brightness(1.2) contrast(1.2)" }} />
                 <div className="text-[48px] font-extrabold text-[#FF6B00] mb-3">01</div>
                 <h3 className="text-[24px] font-semibold text-[#1A1A1A] mb-3">Pay Safely</h3>
                 <p className="text-[16px] text-[#666] leading-[1.6]">Clear shared records and flexible monthly payment options. No hidden fees, full transparency.</p>
@@ -321,7 +321,7 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
                 className="bg-white rounded-[24px] p-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 text-left"
               >
-                <img src="https://i.postimg.cc/66YPhnKX/17edfa9a13084286b0997ff2c75b0f71.png" alt="Find any house anywhere" className="w-full max-h-[260px] object-contain mb-6 mx-auto" />
+                <img src="https://i.postimg.cc/66YPhnKX/17edfa9a13084286b0997ff2c75b0f71.png" alt="Find any house anywhere" className="w-full max-h-[260px] object-contain mb-6 mx-auto mix-blend-multiply" style={{ filter: "brightness(1.2) contrast(1.2)" }} />
                 <div className="text-[48px] font-extrabold text-[#FF6B00] mb-3">02</div>
                 <h3 className="text-[24px] font-semibold text-[#1A1A1A] mb-3">Find Anywhere</h3>
                 <p className="text-[16px] text-[#666] leading-[1.6]">Search and discover properties across any location. Your next home is just a tap away.</p>
@@ -335,7 +335,7 @@ export default function App() {
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
                 className="bg-white rounded-[24px] p-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 text-left"
               >
-                <img src="https://i.postimg.cc/xdp5WDf0/8f25619786f64909af838117d6f66f5d.png" alt="Check safety and lock terms with MyDomos" className="w-full max-h-[260px] object-contain mb-6 mx-auto" />
+                <img src="https://i.postimg.cc/xdp5WDf0/8f25619786f64909af838117d6f66f5d.png" alt="Check safety and lock terms with MyDomos" className="w-full max-h-[260px] object-contain mb-6 mx-auto mix-blend-multiply" style={{ filter: "brightness(1.2) contrast(1.2)" }} />
                 <div className="text-[48px] font-extrabold text-[#FF6B00] mb-3">03</div>
                 <h3 className="text-[24px] font-semibold text-[#1A1A1A] mb-3">Stay Secure</h3>
                 <p className="text-[16px] text-[#666] leading-[1.6]">Check safety ratings and lock in terms with MyDomos protection. Rent with confidence.</p>
