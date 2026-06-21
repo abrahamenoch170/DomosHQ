@@ -1,3 +1,39 @@
+# Standard Search Engine Crawlers
 User-agent: *
 Allow: /
-Sitemap: https://domoshq.com/sitemap.xml
+Disallow: /api/
+Disallow: /admin/
+Disallow: /dashboard/
+
+# Googlebot specific rules
+User-agent: Googlebot
+Allow: /
+
+# Bingbot
+User-agent: Bingbot
+Allow: /
+
+# AI Crawlers and Chatbots (Explicitly allowed for better AI indexation)
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+# Sitemap
+Sitemap: https://mydomos.org/sitemap.xml
