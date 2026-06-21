@@ -7,7 +7,6 @@ import { HeroIllustration } from './components/HeroIllustration';
 import { Logo } from './components/Logo';
 import { WaitlistSection } from './components/WaitlistSection';
 import { FAQSection } from './components/FAQSection';
-import { SearchHouseAnimation, ShieldLockAnimation, PaymentCalendarAnimation } from './components/HowItWorksAnimations';
 import { Header } from './components/Header';
 
 export default function App() {
@@ -276,78 +275,72 @@ export default function App() {
         </section>
 
         {/* How It Works Section */}
-        <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10">
-          <div className="max-w-7xl mx-auto w-full flex flex-col items-center">
+        <section id="how-it-works" className="w-full px-6 md:px-12 lg:px-24 py-24 bg-[#FFF8F0] pointer-events-auto relative z-10">
+          <div className="max-w-[1200px] mx-auto w-full text-center">
             
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.6, ease: "easeOut" }}
-              className="text-[1.5rem] lg:text-[2rem] font-bold text-[#F57E2A] text-center mb-16"
+              className="text-[42px] font-bold text-[#1A1A1A] mb-3"
             >
               How It Works
             </motion.h2>
+            
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
+              className="text-[18px] text-[#666] mb-[60px]"
+            >
+              Three simple steps to secure your next home
+            </motion.p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
-              {/* Step 1 */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {/* Step 1: Pay Safely */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#F57E2A]/10 flex flex-col items-center text-center"
+                className="bg-white rounded-[24px] p-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 text-left"
               >
-                <div className="w-10 h-10 rounded-full bg-[#F57E2A] text-white flex items-center justify-center font-bold mb-4 shrink-0">
-                  1
-                </div>
-                <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-6">
-                  Find any house anywhere
-                </h3>
-                <div className="w-full aspect-square">
-                  <SearchHouseAnimation />
-                </div>
+                <img src="https://i.postimg.cc/ht6W1x91/68b07306391b4b688a5d4596ab51e043.png" alt="Pay safely with clear shared records and monthly options" className="w-full max-h-[260px] object-contain mb-6 mx-auto" />
+                <div className="text-[48px] font-extrabold text-[#FF6B00] mb-3">01</div>
+                <h3 className="text-[24px] font-semibold text-[#1A1A1A] mb-3">Pay Safely</h3>
+                <p className="text-[16px] text-[#666] leading-[1.6]">Clear shared records and flexible monthly payment options. No hidden fees, full transparency.</p>
               </motion.div>
-
-              {/* Step 2 */}
+              
+              {/* Step 2: Find Any House */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#F57E2A]/10 flex flex-col items-center text-center"
+                className="bg-white rounded-[24px] p-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 text-left"
               >
-                <div className="w-10 h-10 rounded-full bg-[#F57E2A] text-white flex items-center justify-center font-bold mb-4 shrink-0">
-                  2
-                </div>
-                <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-6">
-                  Check safety and lock terms with MyDomos
-                </h3>
-                <div className="w-full aspect-square">
-                  <ShieldLockAnimation />
-                </div>
+                <img src="https://i.postimg.cc/66YPhnKX/17edfa9a13084286b0997ff2c75b0f71.png" alt="Find any house anywhere" className="w-full max-h-[260px] object-contain mb-6 mx-auto" />
+                <div className="text-[48px] font-extrabold text-[#FF6B00] mb-3">02</div>
+                <h3 className="text-[24px] font-semibold text-[#1A1A1A] mb-3">Find Anywhere</h3>
+                <p className="text-[16px] text-[#666] leading-[1.6]">Search and discover properties across any location. Your next home is just a tap away.</p>
               </motion.div>
-
-              {/* Step 3 */}
+              
+              {/* Step 3: Check Safety */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
-                className="bg-[rgba(255,248,240,0.9)] rounded-[16px] p-6 shadow-sm border border-[#F57E2A]/10 flex flex-col items-center text-center"
+                className="bg-white rounded-[24px] p-10 px-6 shadow-[0_4px_20px_rgba(0,0,0,0.06)] hover:shadow-[0_12px_40px_rgba(0,0,0,0.12)] hover:-translate-y-2 transition-all duration-300 text-left"
               >
-                <div className="w-10 h-10 rounded-full bg-[#F57E2A] text-white flex items-center justify-center font-bold mb-4 shrink-0">
-                  3
-                </div>
-                <h3 className="text-[#1F2937] font-bold text-[1.25rem] leading-snug mb-6">
-                  Pay safely with clear shared records and monthly options
-                </h3>
-                <div className="w-full aspect-square">
-                  <PaymentCalendarAnimation />
-                </div>
+                <img src="https://i.postimg.cc/xdp5WDf0/8f25619786f64909af838117d6f66f5d.png" alt="Check safety and lock terms with MyDomos" className="w-full max-h-[260px] object-contain mb-6 mx-auto" />
+                <div className="text-[48px] font-extrabold text-[#FF6B00] mb-3">03</div>
+                <h3 className="text-[24px] font-semibold text-[#1A1A1A] mb-3">Stay Secure</h3>
+                <p className="text-[16px] text-[#666] leading-[1.6]">Check safety ratings and lock in terms with MyDomos protection. Rent with confidence.</p>
               </motion.div>
             </div>
-
           </div>
         </section>
 
