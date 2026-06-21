@@ -16,7 +16,7 @@ async function startServer() {
   // --- SEO & LLM Endpoints ---
   app.get('/robots.txt', (req, res) => {
     res.type('text/plain');
-    res.send('User-agent: *\nAllow: /\nSitemap: https://www.mydomos.org/sitemap.xml');
+    res.send('User-agent: *\nAllow: /\nSitemap: https://mydomos.org/sitemap.xml');
   });
 
   app.get('/sitemap.xml', (req, res) => {
@@ -24,7 +24,7 @@ async function startServer() {
     res.send(`<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.mydomos.org/</loc>
+    <loc>https://mydomos.org/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -78,26 +78,7 @@ async function startServer() {
       }
 
       const appHtml = render(url);
-      let html = template.replace(`<!--app-html-->`, appHtml);
-
-      // Dynamic SEO metadata injection
-      let title = "MyDomos Africa – Rental Trust Infrastructure for Africa | Secure Rent Payments, Savings & Loans";
-      let description = "MyDomos is the premier rental trust infrastructure platform for Africa. Secure your property transactions, automate rent payments, access rent loans, and build savings on one trusted platform. We provide the infrastructure for rental trust, transparency, and financial reliability.";
-      let canonical = "https://www.mydomos.org";
-
-      if (url.startsWith('/privacy')) {
-        title = "Privacy Policy – MyDomos Africa | Data Security & User Privacy";
-        description = "Read the MyDomos Africa Privacy Policy. Learn how we securely protect your identity data, transaction records, and rent escrow balances.";
-        canonical = "https://www.mydomos.org/privacy";
-      } else if (url.startsWith('/terms')) {
-        title = "Terms of Use – MyDomos Africa | Rental Trust Service Agreement";
-        description = "Review the Terms of Use for MyDomos Africa. Understand user responsibilities, rental escrow transaction terms, and legal safety guidelines.";
-        canonical = "https://www.mydomos.org/terms";
-      }
-
-      html = html.replace(/<title>.*?<\/title>/, `<title>${title}</title>`);
-      html = html.replace(/<meta name="description"\s+content="[\s\S]*?"\s*\/?>/, `<meta name="description" content="${description}" />`);
-      html = html.replace(/<link rel="canonical" href=".*?"\s*\/?>/, `<link rel="canonical" href="${canonical}" />`);
+      const html = template.replace(`<!--app-html-->`, appHtml);
 
       res.status(200).set({ 'Content-Type': 'text/html' }).end(html);
     } catch (e: any) {

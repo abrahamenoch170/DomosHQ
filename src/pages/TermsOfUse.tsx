@@ -1,54 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TermsOfUse = () => {
-  useEffect(() => {
-    document.title = "Terms of Use – MyDomos Africa | Rental Trust Service Agreement";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Review the Terms of Use for MyDomos Africa. Understand user responsibilities, rental escrow transaction terms, and legal safety guidelines.");
-    }
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute("href", "https://www.mydomos.org/terms");
-    }
-    return () => {
-      if (canonical) {
-        canonical.setAttribute("href", "https://www.mydomos.org");
-      }
-    };
-  }, []);
-
   return (
-    <div className="min-h-screen bg-[#F8FAFC] py-12 px-6 md:px-12 lg:px-24">
-      {/* Breadcrumb Schema Markup */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.mydomos.org/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Terms of Use",
-              "item": "https://www.mydomos.org/terms"
-            }
-          ]
-        })}
-      </script>
-      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
-        <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors">
+    <div className="min-h-screen bg-[#FFF9F6] py-12 px-6 md:px-12 lg:px-24">
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-[#F57E2A]/10 p-8 md:p-12">
+        <Link to="/" className="inline-flex items-center gap-2 text-[#F57E2A] hover:text-[#DE6310] font-medium mb-8 transition-colors">
           <ArrowLeft size={20} /> Back to Home
         </Link>
         
-        <h1 className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-6">Terms of Use</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[#F57E2A] mb-6">Terms of Use</h1>
         <p className="text-gray-500 mb-8">Last updated: April 2026</p>
         
         <div className="prose prose-blue max-w-none text-gray-700 space-y-6">
@@ -118,7 +80,7 @@ const TermsOfUse = () => {
           <section>
             <h2 className="text-xl font-bold text-[#1F2937] mb-3">8. Contact Information</h2>
             <p>
-              If you have any questions about these Terms, please contact us at: <a href="mailto:hello@mydomos.org" className="text-blue-600 hover:underline">hello@mydomos.org</a>
+              If you have any questions about these Terms, please contact us at: <a href="mailto:hello@mydomos.org" className="text-[#F57E2A] hover:underline font-medium">hello@mydomos.org</a>
             </p>
           </section>
         </div>

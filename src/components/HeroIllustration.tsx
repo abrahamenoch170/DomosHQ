@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ShieldCheck, Home, FileText, CheckCircle2 } from 'lucide-react';
+import { ShieldCheck, Home, FileText } from 'lucide-react';
 
 export const HeroIllustration = () => {
   // Generate spirograph coordinates for the circular decorative guilloche
@@ -24,7 +24,7 @@ export const HeroIllustration = () => {
 
   return (
     <div className="w-full max-w-lg mx-auto relative aspect-square flex items-center justify-center perspective-1000">
-      <div className="absolute inset-0 bg-[#FF6B35]/10 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute inset-0 bg-[#F57E2A]/10 rounded-full blur-3xl -z-10"></div>
       
       {/* Main Central Card: Verified Property with redesign */}
       <motion.div
@@ -38,26 +38,22 @@ export const HeroIllustration = () => {
           
           {/* Subtle Guilloche mesh in the card background */}
           <svg className="absolute inset-0 w-full h-full opacity-30" viewBox="0 0 100 100">
-            <path d="M-10,30 Q30,10 70,50 T150,30" fill="none" stroke="#FF6B35" strokeWidth="1" strokeDasharray="2 2" />
-            <path d="M-10,50 Q40,30 60,70 T150,50" fill="none" stroke="#FF6B35" strokeWidth="0.8" strokeDasharray="4 2" />
+            <path d="M-10,30 Q30,10 70,50 T150,30" fill="none" stroke="#F57E2A" strokeWidth="1" strokeDasharray="2 2" />
+            <path d="M-10,50 Q40,30 60,70 T150,50" fill="none" stroke="#F57E2A" strokeWidth="0.8" strokeDasharray="4 2" />
           </svg>
-
-          <Home className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#FF6B35] w-12 h-12" />
-          <div className="absolute top-3 right-3 bg-white/90 backdrop-blur-sm px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm border border-[#FF6B35]/10">
-            <CheckCircle2 size={12} className="text-[#FF6B35]" />
-            <span className="text-[10px] font-bold text-gray-700">Verified</span>
-          </div>
+          <Home className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[#F57E2A] w-12 h-12" />
         </div>
         <div className="space-y-2">
           <div className="h-4 w-3/4 bg-gray-200 rounded-full"></div>
           <div className="h-3 w-1/2 bg-gray-100 rounded-full"></div>
         </div>
         <div className="flex justify-between items-center mt-2 pt-4 border-t border-gray-100">
-          <div className="h-5 w-1/3 bg-[#FFEBE2] rounded-full flex items-center justify-center">
-            <span className="text-[10px] font-bold text-[#FF6B35]">₦ Monthly</span>
+          <div className="flex flex-col">
+            <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">Plan Type</span>
+            <span className="text-xs font-bold text-[#F57E2A] font-mono">Monthly Escrow</span>
           </div>
-          <div className="h-7 w-16 bg-[#FF6B35] hover:bg-[#E0531E] rounded-full flex items-center justify-center cursor-pointer transition-colors shadow-[0_4px_10px_rgba(255,107,53,0.3)]">
-            <span className="text-[10px] font-bold text-white">Secure</span>
+          <div className="h-7 px-4 bg-[#F57E2A] hover:bg-[#DE6310] rounded-full flex items-center justify-center cursor-pointer transition-colors shadow-[0_4px_10px_rgba(255,107,53,0.3)]">
+            <span className="text-[10px] font-bold text-white">Select</span>
           </div>
         </div>
       </motion.div>
@@ -67,10 +63,10 @@ export const HeroIllustration = () => {
         initial={{ opacity: 0, x: -50, y: 20 }}
         animate={{ opacity: 1, x: -40, y: -45 }}
         transition={{ duration: 0.8, delay: 0.2, type: "spring", bounce: 0.4 }}
-        className="absolute z-30 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-[#FF6B35]/15 flex items-center gap-3"
+        className="absolute z-30 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-[#F57E2A]/15 flex items-center gap-3"
         style={{ top: '22%', left: '8%' }}
       >
-        <div className="w-10 h-10 rounded-full bg-[#FFEBE2] flex items-center justify-center text-[#FF6B35]">
+        <div className="w-10 h-10 rounded-full bg-[#FDF0E7] flex items-center justify-center text-[#F57E2A]">
           <ShieldCheck size={20} />
         </div>
         <div>
@@ -87,7 +83,7 @@ export const HeroIllustration = () => {
         className="absolute z-10 bg-white/90 backdrop-blur-sm p-4 rounded-2xl shadow-xl border border-gray-100 flex items-center gap-3"
         style={{ bottom: '22%', right: '3%' }}
       >
-        <div className="w-10 h-10 rounded-full bg-[#FFF0EA] flex items-center justify-center text-[#FF6B35]/80">
+        <div className="w-10 h-10 rounded-full bg-[#FFF0EA] flex items-center justify-center text-[#F57E2A]/80">
           <FileText size={20} />
         </div>
         <div>
@@ -103,7 +99,7 @@ export const HeroIllustration = () => {
           <motion.path
             d={generateSpiroSVG(80, 48, 40, 1.2)}
             fill="none"
-            stroke="#FF6B35"
+            stroke="#F57E2A"
             strokeWidth="0.8"
             strokeDasharray="2 3"
             animate={{ rotate: 360 }}
@@ -115,7 +111,7 @@ export const HeroIllustration = () => {
           <motion.path
             d={generateSpiroSVG(100, 50, 60, 1.1)}
             fill="none"
-            stroke="#FF6B35"
+            stroke="#F57E2A"
             strokeWidth="1"
             strokeDasharray="8 4"
             animate={{ rotate: -360 }}
@@ -129,7 +125,7 @@ export const HeroIllustration = () => {
             cy="150"
             r="135"
             fill="none"
-            stroke="#FF6B35"
+            stroke="#F57E2A"
             strokeWidth="0.5"
             strokeDasharray="12 4"
             animate={{ rotate: 180 }}
@@ -140,7 +136,7 @@ export const HeroIllustration = () => {
             cy="150"
             r="125"
             fill="none"
-            stroke="#FF6B35"
+            stroke="#F57E2A"
             strokeWidth="0.8"
             strokeDasharray="2 4"
             animate={{ rotate: -180 }}

@@ -55,7 +55,7 @@ export const BackgroundMap = () => {
     <div className="absolute inset-0 overflow-hidden bg-[#FFF9F6] flex items-center justify-center pointer-events-none">
       {/* Subtle organic brand color ambient glows */}
       <div 
-        className="absolute top-[-10%] left-[-10%] w-[65%] h-[65%] bg-[#FF6B35]/8 rounded-full blur-[140px] opacity-70 animate-pulse" 
+        className="absolute top-[-10%] left-[-10%] w-[65%] h-[65%] bg-[#F57E2A]/8 rounded-full blur-[140px] opacity-70 animate-pulse" 
         style={{ animationDuration: '8s' }}
       />
       <div 
@@ -85,18 +85,18 @@ export const BackgroundMap = () => {
 
             {/* Linear Glow Gradients */}
             <linearGradient id="orangeGlow" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#FF6B35" stopOpacity="0.4" />
+              <stop offset="0%" stopColor="#F57E2A" stopOpacity="0.4" />
               <stop offset="50%" stopColor="#FFCCB4" stopOpacity="0.1" />
-              <stop offset="100%" stopColor="#FF6B35" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#F57E2A" stopOpacity="0.6" />
             </linearGradient>
 
             <filter id="premiumShadow" x="-10%" y="-10%" width="120%" height="120%">
-              <feDropShadow dx="8" dy="16" stdDeviation="12" floodColor="#FF6B35" floodOpacity="0.12" />
+              <feDropShadow dx="8" dy="16" stdDeviation="12" floodColor="#F57E2A" floodOpacity="0.12" />
             </filter>
           </defs>
 
           {/* 1. Global Background Linear Wavy Guilloche Bands (Subdued) */}
-          <g opacity="0.1" stroke="#FF6B35">
+          <g opacity="0.1" stroke="#F57E2A">
             {ribbon1.map((path, idx) => (
               <path 
                 key={`bg-ribbon1-${idx}`} 
@@ -125,9 +125,9 @@ export const BackgroundMap = () => {
               transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
               style={{ originX: '200px', originY: '400px' }}
             >
-              <path d={generateSpiroPath(120, 80, 60, 200, 400, 1.2)} fill="none" stroke="#FF6B35" strokeWidth="1" />
-              <path d={generateSpiroPath(150, 75, 45, 200, 400, 1.2)} fill="none" stroke="#FF6B35" strokeWidth="0.8" strokeDasharray="3 4" />
-              <path d={generateSpiroPath(100, 50, 75, 200, 400, 1.2)} fill="none" stroke="#FF6B35" strokeWidth="1.2" strokeDasharray="12 4" />
+              <path d={generateSpiroPath(120, 80, 60, 200, 400, 1.2)} fill="none" stroke="#F57E2A" strokeWidth="1" />
+              <path d={generateSpiroPath(150, 75, 45, 200, 400, 1.2)} fill="none" stroke="#F57E2A" strokeWidth="0.8" strokeDasharray="3 4" />
+              <path d={generateSpiroPath(100, 50, 75, 200, 400, 1.2)} fill="none" stroke="#F57E2A" strokeWidth="1.2" strokeDasharray="12 4" />
             </motion.g>
 
             {/* Medallion Right */}
@@ -136,9 +136,9 @@ export const BackgroundMap = () => {
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
               style={{ originX: '1200px', originY: '300px' }}
             >
-              <path d={generateSpiroPath(140, 70, 50, 1200, 300, 1.1)} fill="none" stroke="#FF6B35" strokeWidth="1.1" />
-              <path d={generateSpiroPath(110, 55, 65, 1200, 300, 1.1)} fill="none" stroke="#FF6B35" strokeWidth="0.8" strokeDasharray="2 3" />
-              <path d={generateSpiroPath(160, 80, 40, 1200, 300, 1.1)} fill="none" stroke="#FF6B35" strokeWidth="1" strokeDasharray="8 6" />
+              <path d={generateSpiroPath(140, 70, 50, 1200, 300, 1.1)} fill="none" stroke="#F57E2A" strokeWidth="1.1" />
+              <path d={generateSpiroPath(110, 55, 65, 1200, 300, 1.1)} fill="none" stroke="#F57E2A" strokeWidth="0.8" strokeDasharray="2 3" />
+              <path d={generateSpiroPath(160, 80, 40, 1200, 300, 1.1)} fill="none" stroke="#F57E2A" strokeWidth="1" strokeDasharray="8 6" />
             </motion.g>
           </g>
 
@@ -152,7 +152,7 @@ export const BackgroundMap = () => {
               opacity="0.15"
             />
             {/* Dense, high-precision Guilloche curves weave specifically inside Africa */}
-            <g stroke="#FF6B35" opacity="0.75">
+            <g stroke="#F57E2A" opacity="0.75">
               {/* Vertical sinusoidal wave lines inside Africa */}
               {Array.from({ length: 45 }).map((_, idx) => {
                 const xPos = 400 + (idx * 11);
@@ -197,7 +197,7 @@ export const BackgroundMap = () => {
           </g>
 
           {/* 4. Elegant Double Dotted Contour of the Africa Outline */}
-          <g stroke="#FF6B35" fill="none">
+          <g stroke="#F57E2A" fill="none">
             <path 
               d={africaPathD}
               strokeWidth="2.5"

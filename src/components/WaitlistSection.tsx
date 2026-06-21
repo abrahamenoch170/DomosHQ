@@ -334,7 +334,7 @@ export const WaitlistSection = () => {
         particleCount: 100,
         spread: 70,
         origin: { y: 0.6 },
-        colors: ['#FF6B35', '#E0531E', '#FFCCB4', '#FFF9F6']
+        colors: ['#F57E2A', '#DE6310', '#FFCCB4', '#FFF9F6']
       });
       
       setSuccessData({ 
@@ -389,14 +389,14 @@ export const WaitlistSection = () => {
   };
 
   return (
-    <section id="waitlist" className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10 bg-[#FFF9F6] border-t border-[#FF6B35]/10">
+    <section id="waitlist" className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10 bg-[#FFF9F6] border-t border-[#F57E2A]/10">
       <div className="max-w-3xl mx-auto w-full flex flex-col items-center">
         
         {/* Form Container */}
         <div className="w-full">
           {step < 4 && (
             <div className="text-center mb-10">
-              <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em] mb-4">
+              <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#F57E2A] leading-[1.08] tracking-[-0.04em] mb-4">
                 Join the Waitlist
               </h2>
               <p className="text-[#6B7280] text-[1.125rem]">
@@ -406,7 +406,7 @@ export const WaitlistSection = () => {
               {/* Progress Bar */}
               <div className="w-full max-w-md mx-auto h-2 bg-gray-200 rounded-full mt-6 overflow-hidden">
                 <motion.div 
-                  className="h-full bg-[#FF6B35]"
+                  className="h-full bg-[#F57E2A]"
                   initial={{ width: '33%' }}
                   animate={{ width: `${(step / (role === 'Proptech' ? 2 : 3)) * 100}%` }}
                   transition={{ duration: 0.4, ease: "easeOut" }}
@@ -415,7 +415,7 @@ export const WaitlistSection = () => {
             </div>
           )}
 
-          <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#FF6B35]/10 p-6 md:p-10 relative overflow-hidden min-h-[400px]">
+          <div className="bg-white rounded-3xl shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#F57E2A]/10 p-6 md:p-10 relative overflow-hidden min-h-[400px]">
             <AnimatePresence mode="wait" custom={1}>
             
             {/* STEP 1: ROLE SELECTION */}
@@ -435,9 +435,9 @@ export const WaitlistSection = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
                   <button 
                     onClick={() => { setRole('Tenant'); setError(''); }}
-                    className={`p-6 rounded-2xl border-2 flex flex-col items-center text-center transition-all ${role === 'Tenant' ? 'border-[#FF6B35] bg-[#FFF0EA]' : 'border-gray-100 hover:border-gray-200 bg-white'}`}
+                    className={`p-6 rounded-2xl border-2 flex flex-col items-center text-center transition-all ${role === 'Tenant' ? 'border-[#F57E2A] bg-[#FFF0EA]' : 'border-gray-100 hover:border-gray-200 bg-white'}`}
                   >
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${role === 'Tenant' ? 'bg-[#FF6B35] text-white' : 'bg-gray-100 text-gray-500'}`}>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${role === 'Tenant' ? 'bg-[#F57E2A] text-white' : 'bg-gray-100 text-gray-500'}`}>
                       <User size={24} />
                     </div>
                     <span className="font-semibold text-[#1F2937]">Tenant</span>
@@ -445,9 +445,9 @@ export const WaitlistSection = () => {
                   
                   <button 
                     onClick={() => { setRole('LandlordAgent'); setError(''); }}
-                    className={`p-6 rounded-2xl border-2 flex flex-col items-center text-center transition-all ${role === 'LandlordAgent' ? 'border-[#FF6B35] bg-[#FFF0EA]' : 'border-gray-100 hover:border-gray-200 bg-white'}`}
+                    className={`p-6 rounded-2xl border-2 flex flex-col items-center text-center transition-all ${role === 'LandlordAgent' ? 'border-[#F57E2A] bg-[#FFF0EA]' : 'border-gray-100 hover:border-gray-200 bg-white'}`}
                   >
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${role === 'LandlordAgent' ? 'bg-[#FF6B35] text-white' : 'bg-gray-100 text-gray-500'}`}>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${role === 'LandlordAgent' ? 'bg-[#F57E2A] text-white' : 'bg-gray-100 text-gray-500'}`}>
                       <Building size={24} />
                     </div>
                     <span className="font-semibold text-[#1F2937]">Landlord or Agent</span>
@@ -455,23 +455,21 @@ export const WaitlistSection = () => {
                   
                   <button 
                     onClick={() => { setRole('Proptech'); setError(''); }}
-                    className={`p-6 rounded-2xl border-2 flex flex-col items-center text-center transition-all ${role === 'Proptech' ? 'border-[#FF6B35] bg-[#FFF0EA]' : 'border-gray-100 hover:border-gray-200 bg-white'}`}
+                    className={`p-6 rounded-2xl border-2 flex flex-col items-center text-center transition-all ${role === 'Proptech' ? 'border-[#F57E2A] bg-[#FFF0EA]' : 'border-gray-100 hover:border-gray-200 bg-white'}`}
                   >
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${role === 'Proptech' ? 'bg-[#FF6B35] text-white' : 'bg-gray-100 text-gray-500'}`}>
+                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-4 ${role === 'Proptech' ? 'bg-[#F57E2A] text-white' : 'bg-gray-100 text-gray-500'}`}>
                       <Network size={24} />
                     </div>
                     <span className="font-semibold text-[#1F2937]">Proptech / Listing Site</span>
                   </button>
                 </div>
 
-                <div className="min-h-[24px] flex items-center justify-center mb-4">
-                  <p className={`text-red-500 text-sm text-center transition-opacity duration-200 ${error ? 'opacity-100' : 'opacity-0'}`}>{error || ' '}</p>
-                </div>
+                {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
 
                 <div className="mt-auto flex justify-end">
                   <button 
                     onClick={handleNext}
-                    className="bg-[#FF6B35] hover:bg-[#E0531E] text-white font-bold px-8 py-3 rounded-full transition-colors flex items-center gap-2 shadow-[0_4px_14px_rgba(255,107,53,0.3)]"
+                    className="bg-[#F57E2A] hover:bg-[#DE6310] text-white font-bold px-8 py-3 rounded-full transition-colors flex items-center gap-2 shadow-[0_4px_14px_rgba(255,107,53,0.3)]"
                   >
                     Next <ArrowRight size={18} />
                   </button>
@@ -498,26 +496,26 @@ export const WaitlistSection = () => {
                     <>
                       <div className="col-span-1 md:col-span-2">
                         <label htmlFor="fullName" className="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
-                        <input id="fullName" autoFocus aria-label="Full Name" type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="John Doe" />
+                        <input id="fullName" autoFocus aria-label="Full Name" type="text" name="fullName" value={formData.fullName} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="John Doe" />
                       </div>
                       <div>
                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email *</label>
-                        <input id="email" aria-label="Email Address" type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
+                        <input id="email" aria-label="Email Address" type="email" name="email" value={formData.email} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="john@example.com" />
                       </div>
                       <div>
                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone *</label>
-                        <input id="phone" aria-label="Phone Number" type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="08012345678" />
+                        <input id="phone" aria-label="Phone Number" type="tel" name="phone" value={formData.phone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="08012345678" />
                       </div>
                       <div>
                         <label htmlFor="country" className="block text-sm font-medium text-gray-700 mb-1">Country *</label>
-                        <select id="country" aria-label="Country" name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all bg-white">
+                        <select id="country" aria-label="Country" name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all bg-white">
                           {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                         </select>
                       </div>
                       {formData.country === 'Nigeria' && (
                         <div>
                           <label htmlFor="state" className="block text-sm font-medium text-gray-700 mb-1">State *</label>
-                          <select id="state" aria-label="State" name="state" value={formData.state} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all bg-white">
+                          <select id="state" aria-label="State" name="state" value={formData.state} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all bg-white">
                             <option value="">Select State</option>
                             {NIGERIAN_STATES.map(s => <option key={s} value={s}>{s}</option>)}
                           </select>
@@ -525,12 +523,12 @@ export const WaitlistSection = () => {
                       )}
                       <div className={formData.country === 'Nigeria' ? 'col-span-1 md:col-span-2' : ''}>
                         <label htmlFor="city" className="block text-sm font-medium text-gray-700 mb-1">City *</label>
-                        <input id="city" aria-label="City" type="text" name="city" value={formData.city} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="Lagos" />
+                        <input id="city" aria-label="City" type="text" name="city" value={formData.city} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="Lagos" />
                       </div>
                       {role === 'LandlordAgent' && (
                         <div className="col-span-1 md:col-span-2">
                           <label htmlFor="propertiesCount" className="block text-sm font-medium text-gray-700 mb-1">How many properties do you manage? (Optional)</label>
-                          <input id="propertiesCount" aria-label="Number of properties managed" type="number" name="propertiesCount" value={formData.propertiesCount} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="e.g. 5" />
+                          <input id="propertiesCount" aria-label="Number of properties managed" type="number" name="propertiesCount" value={formData.propertiesCount} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="e.g. 5" />
                         </div>
                       )}
                     </>
@@ -540,33 +538,33 @@ export const WaitlistSection = () => {
                     <>
                       <div className="col-span-1 md:col-span-2">
                         <label htmlFor="companyName" className="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
-                        <input id="companyName" autoFocus aria-label="Company Name" type="text" name="companyName" value={formData.companyName} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="Acme Properties" />
+                        <input id="companyName" autoFocus aria-label="Company Name" type="text" name="companyName" value={formData.companyName} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="Acme Properties" />
                       </div>
                       <div className="col-span-1 md:col-span-2">
                         <label htmlFor="website" className="block text-sm font-medium text-gray-700 mb-1">Company Website *</label>
-                        <input id="website" aria-label="Company Website" type="url" name="website" value={formData.website} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="https://example.com" />
+                        <input id="website" aria-label="Company Website" type="url" name="website" value={formData.website} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="https://example.com" />
                       </div>
                       <div>
                         <label htmlFor="contactPerson" className="block text-sm font-medium text-gray-700 mb-1">Contact Person Name *</label>
-                        <input id="contactPerson" aria-label="Contact Person Name" type="text" name="contactPerson" value={formData.contactPerson} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="Jane Doe" />
+                        <input id="contactPerson" aria-label="Contact Person Name" type="text" name="contactPerson" value={formData.contactPerson} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="Jane Doe" />
                       </div>
                       <div>
                         <label htmlFor="contactEmail" className="block text-sm font-medium text-gray-700 mb-1">Contact Email *</label>
-                        <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="jane@example.com" />
+                        <input type="email" name="contactEmail" value={formData.contactEmail} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="jane@example.com" />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Contact Phone (Optional)</label>
-                        <input type="tel" name="contactPhone" value={formData.contactPhone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="+234..." />
+                        <input type="tel" name="contactPhone" value={formData.contactPhone} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="+234..." />
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Country *</label>
-                        <select name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all bg-white">
+                        <select name="country" value={formData.country} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all bg-white">
                           {COUNTRIES.map(c => <option key={c} value={c}>{c}</option>)}
                         </select>
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Platform Type *</label>
-                        <select name="platformType" value={formData.platformType} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all bg-white">
+                        <select name="platformType" value={formData.platformType} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all bg-white">
                           <option value="Listing Site">Listing Site</option>
                           <option value="Property Management">Property Management</option>
                           <option value="Other">Other</option>
@@ -574,21 +572,21 @@ export const WaitlistSection = () => {
                       </div>
                       <div>
                         <label className="block text-sm font-medium text-gray-700 mb-1">Number of Listings (Optional)</label>
-                        <input type="number" name="listingsCount" value={formData.listingsCount} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all" placeholder="e.g. 1000" />
+                        <input type="number" name="listingsCount" value={formData.listingsCount} onChange={handleInputChange} className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all" placeholder="e.g. 1000" />
                       </div>
                       <div className="col-span-1 md:col-span-2 mt-2">
                         <label className="block text-sm font-medium text-gray-700 mb-2">Integration Interest</label>
                         <div className="flex flex-wrap gap-4">
-                          <label className="flex items-center gap-2 cursor-pointer py-3 px-2 min-h-[48px]">
-                            <input type="checkbox" checked={formData.integrationInterest.API} onChange={() => handleCheckboxChange('API')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35] min-w-[20px] min-h-[20px]" />
+                          <label className="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" checked={formData.integrationInterest.API} onChange={() => handleCheckboxChange('API')} className="w-4 h-4 text-[#F57E2A] rounded border-gray-300 focus:ring-[#F57E2A]" />
                             <span className="text-sm text-gray-700">API</span>
                           </label>
-                          <label className="flex items-center gap-2 cursor-pointer py-3 px-2 min-h-[48px]">
-                            <input type="checkbox" checked={formData.integrationInterest.Referral} onChange={() => handleCheckboxChange('Referral')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35] min-w-[20px] min-h-[20px]" />
+                          <label className="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" checked={formData.integrationInterest.Referral} onChange={() => handleCheckboxChange('Referral')} className="w-4 h-4 text-[#F57E2A] rounded border-gray-300 focus:ring-[#F57E2A]" />
                             <span className="text-sm text-gray-700">Referral partnership</span>
                           </label>
-                          <label className="flex items-center gap-2 cursor-pointer py-3 px-2 min-h-[48px]">
-                            <input type="checkbox" checked={formData.integrationInterest.Other} onChange={() => handleCheckboxChange('Other')} className="w-4 h-4 text-[#FF6B35] rounded border-gray-300 focus:ring-[#FF6B35] min-w-[20px] min-h-[20px]" />
+                          <label className="flex items-center gap-2 cursor-pointer">
+                            <input type="checkbox" checked={formData.integrationInterest.Other} onChange={() => handleCheckboxChange('Other')} className="w-4 h-4 text-[#F57E2A] rounded border-gray-300 focus:ring-[#F57E2A]" />
                             <span className="text-sm text-gray-700">Other</span>
                           </label>
                         </div>
@@ -597,9 +595,7 @@ export const WaitlistSection = () => {
                   )}
                 </div>
 
-                <div className="min-h-[24px] flex items-center justify-center mb-4">
-                  <p className={`text-red-500 text-sm text-center transition-opacity duration-200 ${error ? 'opacity-100' : 'opacity-0'}`}>{error || ' '}</p>
-                </div>
+                {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
 
                 <div className="mt-auto flex justify-between">
                   <button 
@@ -611,7 +607,7 @@ export const WaitlistSection = () => {
                   <button 
                     onClick={handleNext}
                     disabled={isLoading}
-                    className="bg-[#FF6B35] hover:bg-[#E0531E] text-white font-bold px-8 py-3 rounded-full transition-colors flex items-center gap-2 disabled:opacity-70 shadow-[0_4px_14px_rgba(255,107,53,0.3)]"
+                    className="bg-[#F57E2A] hover:bg-[#DE6310] text-white font-bold px-8 py-3 rounded-full transition-colors flex items-center gap-2 disabled:opacity-70 shadow-[0_4px_14px_rgba(255,107,53,0.3)]"
                   >
                     {role === 'Proptech' ? (isLoading ? 'Submitting...' : 'Submit') : 'Next'} {!isLoading && role !== 'Proptech' && <ArrowRight size={18} />}
                   </button>
@@ -641,14 +637,12 @@ export const WaitlistSection = () => {
                     name="referredBy" 
                     value={formData.referredBy} 
                     onChange={handleInputChange} 
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#FF6B35] focus:border-transparent outline-none transition-all uppercase" 
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:ring-2 focus:ring-[#F57E2A] focus:border-transparent outline-none transition-all uppercase" 
                     placeholder="e.g. A1B2C3D4" 
                   />
                 </div>
 
-                <div className="min-h-[24px] flex items-center justify-center mb-4">
-                  <p className={`text-red-500 text-sm text-center transition-opacity duration-200 ${error ? 'opacity-100' : 'opacity-0'}`}>{error || ' '}</p>
-                </div>
+                {error && <p className="text-red-500 text-sm text-center mb-4">{error}</p>}
 
                 <div className="mt-auto flex justify-between">
                   <button 
@@ -660,7 +654,7 @@ export const WaitlistSection = () => {
                   <button 
                     onClick={handleSubmit}
                     disabled={isLoading}
-                    className="bg-[#FF6B35] hover:bg-[#E0531E] text-white font-bold px-8 py-3 rounded-full transition-colors flex items-center gap-2 disabled:opacity-70 shadow-[0_4px_14px_rgba(255,107,53,0.3)]"
+                    className="bg-[#F57E2A] hover:bg-[#DE6310] text-white font-bold px-8 py-3 rounded-full transition-colors flex items-center gap-2 disabled:opacity-70 shadow-[0_4px_14px_rgba(255,107,53,0.3)]"
                   >
                     {isLoading ? 'Submitting...' : 'Submit'}
                   </button>
@@ -677,7 +671,7 @@ export const WaitlistSection = () => {
                 transition={{ type: "spring", stiffness: 300, damping: 25 }}
                 className="flex flex-col items-center text-center py-8 h-full justify-center"
               >
-                <div className="w-20 h-20 rounded-full bg-[#FFEBE2] text-[#FF6B35] flex items-center justify-center mb-6">
+                <div className="w-20 h-20 rounded-full bg-[#FDF0E7] text-[#F57E2A] flex items-center justify-center mb-6">
                   <CheckCircle2 size={40} strokeWidth={2.5} />
                 </div>
                 
@@ -695,8 +689,9 @@ export const WaitlistSection = () => {
                     <h3 className="text-2xl font-bold text-[#1F2937] mb-2">
                       {successData?.isExisting ? "You're already on the waitlist!" : "You're on the waitlist!"}
                     </h3>
-                    <div className="bg-[#FFEBE2] text-[#FF6B35] font-bold px-4 py-2 rounded-full mb-6 inline-block text-sm">
-                      Position: #{successData?.position?.toLocaleString() || '---'}
+                    <div className="text-[#F57E2A] font-mono text-sm uppercase tracking-wider mb-6 flex flex-col items-center justify-center border-y border-[#F57E2A]/15 py-2 w-full max-w-[200px] mx-auto">
+                      <span className="text-[10px] text-gray-400 font-sans font-semibold tracking-widest uppercase">Queue Position</span>
+                      <span className="text-lg font-bold mt-0.5">#{successData?.position?.toLocaleString() || '---'}</span>
                     </div>
                     
                     <div className="w-full max-w-md bg-gray-50 border border-gray-200 rounded-2xl p-6 mb-6">
@@ -711,7 +706,7 @@ export const WaitlistSection = () => {
                         />
                         <button 
                           onClick={copyToClipboard}
-                          className={`p-2 rounded-lg transition-colors flex items-center justify-center min-w-[36px] ${isCopied ? 'bg-emerald-50 text-emerald-600 border border-emerald-200' : 'bg-[#FFEBE2] text-[#FF6B35] hover:bg-[#FFD2C0]'}`}
+                          className={`p-2 rounded-lg transition-colors flex items-center justify-center min-w-[36px] ${isCopied ? 'bg-emerald-50 text-emerald-600 border border-emerald-200' : 'bg-[#FDF0E7] text-[#F57E2A] hover:bg-[#FFD2C0]'}`}
                           title={isCopied ? "Copied!" : "Copy to clipboard"}
                         >
                           {isCopied ? <Check size={18} /> : <Copy size={18} />}
@@ -725,7 +720,7 @@ export const WaitlistSection = () => {
                         </div>
                         <div className="w-px bg-gray-200"></div>
                         <div className="text-center flex-1">
-                          <p className="text-2xl font-bold text-[#FF6B35]">{successData?.points || 0}</p>
+                          <p className="text-2xl font-bold text-[#F57E2A]">{successData?.points || 0}</p>
                           <p className="text-xs text-gray-500 uppercase tracking-wider font-medium">Points</p>
                         </div>
                       </div>
@@ -745,11 +740,11 @@ export const WaitlistSection = () => {
           {/* Privacy Policy and Terms of Use */}
           <div className="mt-6 text-center text-sm text-gray-500">
             By joining, you agree to our{' '}
-            <Link to="/terms" className="text-[#FF6B35] hover:underline font-medium">
+            <Link to="/terms" className="text-[#F57E2A] hover:underline font-medium">
               Terms of Use
             </Link>{' '}
             and{' '}
-            <Link to="/privacy" className="text-[#FF6B35] hover:underline font-medium">
+            <Link to="/privacy" className="text-[#F57E2A] hover:underline font-medium">
               Privacy Policy
             </Link>
             {formData.country ? ` applicable in ${formData.country}` : ''}.

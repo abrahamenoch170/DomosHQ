@@ -1,5 +1,6 @@
 {
-  "name": "MyDomos Africa",
-  "description": "MyDomos Africa is Africa’s premier rental trust infrastructure platform. We provide a comprehensive ecosystem where tenants can gather pre-rental information, verify Agents/Landlords, utility debts, be sure of being safe and protected before, during and after locking rental terms. Landlords benefit from verification of tenants, guaranteed payments, and automated receipts. Our API enables listing sites and proptechs to embed trust tools, making renting safe, transparent, and predictable across fragmented African markets.",
-  "requestFramePermissions": []
+  "name": "DomosHQ",
+  "description": "DomosHQ is Africa’s premier rental trust infrastructure platform. We provide a comprehensive ecosystem where tenants verify utility debts, lock rental terms, and access flexible monthly payments via embedded financing. Landlords benefit from guaranteed payments, automated receipts, and a shared dashboard. Our API enables listing sites and proptechs to embed trust tools, making renting safe, transparent, and predictable across fragmented African markets.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

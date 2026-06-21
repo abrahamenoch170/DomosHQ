@@ -1,54 +1,16 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const PrivacyPolicy = () => {
-  useEffect(() => {
-    document.title = "Privacy Policy – MyDomos Africa | Data Security & User Privacy";
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", "Read the MyDomos Africa Privacy Policy. Learn how we securely protect your personal details, email contacts, and financial records.");
-    }
-    const canonical = document.querySelector('link[rel="canonical"]');
-    if (canonical) {
-      canonical.setAttribute("href", "https://www.mydomos.org/privacy");
-    }
-    return () => {
-      if (canonical) {
-        canonical.setAttribute("href", "https://www.mydomos.org");
-      }
-    };
-  }, []);
-
   return (
-    <div className="min-h-screen bg-[#F8FAFC] py-12 px-6 md:px-12 lg:px-24">
-      {/* Breadcrumb Schema Markup */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "BreadcrumbList",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://www.mydomos.org/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Privacy Policy",
-              "item": "https://www.mydomos.org/privacy"
-            }
-          ]
-        })}
-      </script>
-      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-gray-100 p-8 md:p-12">
-        <Link to="/" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-800 font-medium mb-8 transition-colors">
+    <div className="min-h-screen bg-[#FFF9F6] py-12 px-6 md:px-12 lg:px-24">
+      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-sm border border-[#F57E2A]/10 p-8 md:p-12">
+        <Link to="/" className="inline-flex items-center gap-2 text-[#F57E2A] hover:text-[#DE6310] font-medium mb-8 transition-colors">
           <ArrowLeft size={20} /> Back to Home
         </Link>
         
-        <h1 className="text-3xl md:text-4xl font-bold text-[#1E3A8A] mb-6">Privacy Policy</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-[#F57E2A] mb-6">Privacy Policy</h1>
         <p className="text-gray-500 mb-8">Last updated: April 2026</p>
         
         <div className="prose prose-blue max-w-none text-gray-700 space-y-6">
@@ -103,7 +65,7 @@ const PrivacyPolicy = () => {
           <section>
             <h2 className="text-xl font-bold text-[#1F2937] mb-3">6. Contact Us</h2>
             <p>
-              If you have any questions about this privacy policy or our privacy practices, please contact us at: <a href="mailto:hello@mydomos.org" className="text-blue-600 hover:underline">hello@mydomos.org</a>
+              If you have any questions about this privacy policy or our privacy practices, please contact us at: <a href="mailto:hello@mydomos.org" className="text-[#F57E2A] hover:underline font-medium">hello@mydomos.org</a>
             </p>
           </section>
         </div>

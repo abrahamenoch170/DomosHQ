@@ -37,7 +37,7 @@ export const FAQSection = () => {
   };
 
   return (
-    <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10 bg-white/40 backdrop-blur-sm border-t border-[#FF6B35]/10">
+    <section className="w-full px-6 md:px-12 lg:px-24 py-24 pointer-events-auto relative z-10 bg-white/40 backdrop-blur-sm border-t border-[#F57E2A]/10">
       <div className="max-w-3xl mx-auto w-full flex flex-col items-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -46,15 +46,15 @@ export const FAQSection = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="text-center mb-12"
         >
-          <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#FF6B35]">
+          <div className="uppercase text-[11px] tracking-[0.12em] opacity-60 font-bold mb-3 text-[#F57E2A]">
             Got Questions?
           </div>
-          <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#FF6B35] leading-[1.08] tracking-[-0.04em]">
+          <h2 className="text-[2rem] lg:text-[2.5rem] font-[700] text-[#F57E2A] leading-[1.08] tracking-[-0.04em]">
             Frequently Asked Questions
           </h2>
         </motion.div>
 
-        <div className="w-full flex flex-col gap-4" itemScope itemType="https://schema.org/FAQPage">
+        <div className="w-full flex flex-col gap-4">
           {faqs.map((faq, index) => (
             <motion.div
               key={index}
@@ -62,18 +62,15 @@ export const FAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.4, delay: index * 0.1 }}
-              className="bg-white/80 backdrop-blur-md border border-black/[0.06] rounded-2xl overflow-hidden"
-              itemProp="mainEntity"
-              itemScope
-              itemType="https://schema.org/Question"
+              className="bg-white/80 backdrop-blur-md border border-[#F57E2A]/15 rounded-2xl overflow-hidden"
             >
               <button
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
               >
-                <h3 itemProp="name" className="text-[#1F2937] font-semibold text-[1.125rem] pr-4 inline">
+                <span className="text-[#1F2937] font-semibold text-[1.125rem] pr-4">
                   {faq.question}
-                </h3>
+                </span>
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -82,7 +79,7 @@ export const FAQSection = () => {
                   <ChevronDown size={20} />
                 </motion.div>
               </button>
-
+              
               <AnimatePresence>
                 {openIndex === index && (
                   <motion.div
@@ -90,11 +87,8 @@ export const FAQSection = () => {
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
                     transition={{ duration: 0.3, ease: "easeInOut" }}
-                    itemProp="acceptedAnswer"
-                    itemScope
-                    itemType="https://schema.org/acceptedAnswer"
                   >
-                    <div itemProp="text" className="px-6 pb-5 text-[#4B5563] text-[1rem] leading-relaxed">
+                    <div className="px-6 pb-5 text-[#4B5563] text-[1rem] leading-relaxed">
                       {faq.answer}
                     </div>
                   </motion.div>
